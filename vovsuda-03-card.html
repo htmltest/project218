@@ -21,6 +21,8 @@
 
                 <header>
                     <div class="container">
+                        <a href="#" class="mobile-menu-link"><svg><use xlink:href="images/sprite.svg#mobile-menu-link"></use></svg></a>
+
                         <div class="logo"><a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></a></div>
 
                         <nav class="nav">
@@ -136,6 +138,7 @@
                                 </li>
                                 <li><a href="#">О бренде</a></li>
                             </ul>
+                            <a href="#" class="mobile-menu-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></a>
                         </nav>
 
                         <div class="header-search">
@@ -153,7 +156,7 @@
                                     <div class="search-window-results">
                                     </div>
                                 </div>
-                                <a href="#" class="search-window-close"><svg><use xlink:href="images/sprite.svg#search-window-close"></use></svg></a>
+                                <a href="#" class="search-window-close"><svg><use xlink:href="images/sprite.svg#search-window-close"></use></svg><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></a>
                             </div>
                         </div>
                         <div class="header-cart">
@@ -229,71 +232,110 @@
                         <!-- card info -->
                         <div class="card-info">
                             <div class="breadcrumbs"><a href="#">Вовсюда</a><span>/</span><a href="#">Каталог</a><span>/</span>Верхняя одежда</div>
+                            <div class="card-info-nameplates">
+                                <span>Sale</span>
+                                <span>New</span>
+                            </div>
                             <h2>Топ-бра из хлопка и шелка</h2>
                             <div class="card-info-price">7 980 ₽</div>
                             <form action="windows/cart-success.html" method="post" class="card-info-form">
                                 <div class="card-info-colors">
                                     <label>
-                                        <input type="radio" name="color" value="1" checked data-title="Черный">
+                                        <input type="radio" name="color" value="01" checked data-title="Черный">
                                         <span>
                                             <svg style="fill:#131212"><use xlink:href="images/sprite.svg#card-color"></use></svg>
                                             <svg style="fill:#131212"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="2" data-title="Коричневый">
+                                        <input type="radio" name="color" value="02" data-title="Серый">
                                         <span>
-                                            <svg style="fill:#6A6A6A"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#6A6A6A"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#49484D"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#49484D"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="3" data-title="Серый">
+                                        <input type="radio" name="color" value="03" data-title="Светло-серый">
                                         <span>
-                                            <svg style="fill:#BEBEBE"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#BEBEBE"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#C6C6C6"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#C6C6C6"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="4" data-title="Голубой">
+                                        <input type="radio" name="color" value="04" data-title="Синий">
                                         <span>
-                                            <svg style="fill:#63D6E5"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#63D6E5"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#233657"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#233657"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="5" data-title="Синий">
+                                        <input type="radio" name="color" value="05" data-title="Голубой">
                                         <span>
-                                            <svg style="fill:#1669E5"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#1669E5"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#4B81BF"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#4B81BF"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="6" data-title="Бежевый">
+                                        <input type="radio" name="color" value="06" data-title="Розовый">
                                         <span>
-                                            <svg style="fill:#E5D4BA"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#E5D4BA"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#DC5B62"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#DC5B62"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="7" data-title="Белый">
+                                        <input type="radio" name="color" value="07" data-title="Сливочный">
+                                        <span>
+                                            <svg style="fill:#F4EDC3"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#F4EDC3"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="color" value="08" data-title="Молочный">
+                                        <span>
+                                            <svg style="fill:#F0EDE4"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#F0EDE4"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="color" value="09" data-title="Белый">
                                         <span>
                                             <svg style="fill:#FFFFFF; stroke:#E3E2DE"><use xlink:href="images/sprite.svg#card-color"></use></svg>
                                             <svg style="fill:#FFFFFF; stroke:#E3E2DE"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="8" data-title="Розовый">
+                                        <input type="radio" name="color" value="10" data-title="Красный">
                                         <span>
-                                            <svg style="fill:#F14CA5"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#F14CA5"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#AB1822"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#AB1822"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="color" value="9" data-title="Оранжевый">
+                                        <input type="radio" name="color" value="11" data-title="Оранжевый">
                                         <span>
-                                            <svg style="fill:#EFB583"><use xlink:href="images/sprite.svg#card-color"></use></svg>
-                                            <svg style="fill:#EFB583"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                            <svg style="fill:#C34121"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#C34121"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="color" value="12" data-title="Зеленый">
+                                        <span>
+                                            <svg style="fill:#264E36"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#264E36"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="color" value="13" data-title="Бежевый">
+                                        <span>
+                                            <svg style="fill:#B29F8E"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#B29F8E"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="color" value="14" data-title="Коричневый">
+                                        <span>
+                                            <svg style="fill:#5F3F32"><use xlink:href="images/sprite.svg#card-color"></use></svg>
+                                            <svg style="fill:#5F3F32"><use xlink:href="images/sprite.svg#card-color-checked"></use></svg>
                                         </span>
                                     </label>
                                 </div>
@@ -311,7 +353,141 @@
                                         <div class="window-size-btn"><a href="#" class="btn">добавить в корзину</a></div>
                                     </div>
                                 </div>
-                                <div class="card-info-sizes-link"><a href="#">Найдите свой подходящий размер</a></div>
+                                <div class="card-info-sizes-link"><a href="#window-table" class="window-link">Найдите свой подходящий размер</a></div>
+                                <div class="window-template" id="window-table">
+                                    <div class="window-table">
+                                        <h3>Таблица размеров</h3>
+                                        <div class="window-table-text">Аккуратная куртка с&nbsp;рубашечным воротником и&nbsp;застежкой на&nbsp;молнию гармонично впишется в&nbsp;городской гардероб: носите ее&nbsp;с&nbsp;брюками чинос.</div>
+                                        <div class="window-table-list">
+                                            <div class="window-table-list-headers">
+                                                <div class="window-table-list-header">Размер</div>
+                                                <div class="window-table-list-header">RU</div>
+                                                <div class="window-table-list-header">Рост</div>
+                                                <div class="window-table-list-header">Грудь</div>
+                                                <div class="window-table-list-header">Талия</div>
+                                                <div class="window-table-list-header">Бедра</div>
+                                            </div>
+                                            <div class="window-table-list-row">
+                                                <div class="window-table-list-cell">XS</div>
+                                                <div class="window-table-list-cell">40</div>
+                                                <div class="window-table-list-cell">160-164</div>
+                                                <div class="window-table-list-cell">84</div>
+                                                <div class="window-table-list-cell">64</div>
+                                                <div class="window-table-list-cell">92</div>
+                                            </div>
+                                            <div class="window-table-list-row">
+                                                <div class="window-table-list-cell">S</div>
+                                                <div class="window-table-list-cell">42</div>
+                                                <div class="window-table-list-cell">164-168</div>
+                                                <div class="window-table-list-cell">86</div>
+                                                <div class="window-table-list-cell">68</div>
+                                                <div class="window-table-list-cell">96</div>
+                                            </div>
+                                            <div class="window-table-list-row">
+                                                <div class="window-table-list-cell">M</div>
+                                                <div class="window-table-list-cell">44</div>
+                                                <div class="window-table-list-cell">168-172</div>
+                                                <div class="window-table-list-cell">90</div>
+                                                <div class="window-table-list-cell">72</div>
+                                                <div class="window-table-list-cell">102</div>
+                                            </div>
+                                            <div class="window-table-list-row">
+                                                <div class="window-table-list-cell">L</div>
+                                                <div class="window-table-list-cell">46</div>
+                                                <div class="window-table-list-cell">168-175</div>
+                                                <div class="window-table-list-cell">96</div>
+                                                <div class="window-table-list-cell">77</div>
+                                                <div class="window-table-list-cell">108</div>
+                                            </div>
+                                        </div>
+                                        <div class="window-table-measurements">
+                                            <div class="window-table-measurement">
+                                                <div class="window-table-measurement-title">Размер XS</div>
+                                                <div class="window-table-measurement-list">
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Рост модели на фото</div>
+                                                        <div class="window-table-measurement-item-value">180 СМ</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Размер на модели</div>
+                                                        <div class="window-table-measurement-item-value">S</div>
+                                                    </div>
+                                                </div>
+                                                <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
+                                            </div>
+                                            <div class="window-table-measurement">
+                                                <div class="window-table-measurement-title">Размер S</div>
+                                                <div class="window-table-measurement-list">
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Рост модели на фото</div>
+                                                        <div class="window-table-measurement-item-value">180 СМ</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Размер на модели</div>
+                                                        <div class="window-table-measurement-item-value">S</div>
+                                                    </div>
+                                                </div>
+                                                <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
+                                            </div>
+                                            <div class="window-table-measurement">
+                                                <div class="window-table-measurement-title">Размер M</div>
+                                                <div class="window-table-measurement-list">
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Рост модели на фото</div>
+                                                        <div class="window-table-measurement-item-value">180 СМ</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Размер на модели</div>
+                                                        <div class="window-table-measurement-item-value">S</div>
+                                                    </div>
+                                                </div>
+                                                <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
+                                            </div>
+                                            <div class="window-table-measurement">
+                                                <div class="window-table-measurement-title">Размер L</div>
+                                                <div class="window-table-measurement-list">
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Длина рукава</div>
+                                                        <div class="window-table-measurement-item-value">62,9 CM</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Рост модели на фото</div>
+                                                        <div class="window-table-measurement-item-value">180 СМ</div>
+                                                    </div>
+                                                    <div class="window-table-measurement-item">
+                                                        <div class="window-table-measurement-item-title">Размер на модели</div>
+                                                        <div class="window-table-measurement-item-value">S</div>
+                                                    </div>
+                                                </div>
+                                                <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card-info-ctrl">
                                     <div class="card-info-submit"><button type="submit" class="btn">добавить в корзину</button></div>
                                     <div class="card-info-link"><a href="#" class="btn-grey"><span>Перейти в корзину</a></div>
@@ -331,7 +507,7 @@
                                                     <div class="card-info-block-param-value">Серый</div>
                                                 </div>
                                                 <div class="card-info-block-param">
-                                                    <div class="card-info-block-param-title">Параметры модели:</div>
+                                                    <div class="card-info-block-param-title">Модель на фото:</div>
                                                     <div class="card-info-block-param-value">187 / 98 / 77 / 95</div>
                                                 </div>
                                                 <div class="card-info-block-param">
@@ -343,138 +519,24 @@
                                         </div>
                                     </div>
                                     <div class="card-info-block">
-                                        <a href="#" class="card-info-block-title card-info-block-title-window" data-window="window-table" data-window="window-table">Обмеры изделия<svg><use xlink:href="images/sprite.svg#card-info-block-title"></use></svg></a>
-                                        <div class="window-template" id="window-table">
-                                            <div class="window-table">
-                                                <h3>Таблица размеров</h3>
-                                                <div class="window-table-text">Аккуратная куртка с&nbsp;рубашечным воротником и&nbsp;застежкой на&nbsp;молнию гармонично впишется в&nbsp;городской гардероб: носите ее&nbsp;с&nbsp;брюками чинос.</div>
-                                                <div class="window-table-list">
-                                                    <div class="window-table-list-headers">
-                                                        <div class="window-table-list-header">Размер</div>
-                                                        <div class="window-table-list-header">RU</div>
-                                                        <div class="window-table-list-header">Рост</div>
-                                                        <div class="window-table-list-header">Грудь</div>
-                                                        <div class="window-table-list-header">Талия</div>
-                                                        <div class="window-table-list-header">Бедра</div>
-                                                    </div>
-                                                    <div class="window-table-list-row">
-                                                        <div class="window-table-list-cell">XS</div>
-                                                        <div class="window-table-list-cell">40</div>
-                                                        <div class="window-table-list-cell">160-164</div>
-                                                        <div class="window-table-list-cell">84</div>
-                                                        <div class="window-table-list-cell">64</div>
-                                                        <div class="window-table-list-cell">92</div>
-                                                    </div>
-                                                    <div class="window-table-list-row">
-                                                        <div class="window-table-list-cell">S</div>
-                                                        <div class="window-table-list-cell">42</div>
-                                                        <div class="window-table-list-cell">164-168</div>
-                                                        <div class="window-table-list-cell">86</div>
-                                                        <div class="window-table-list-cell">68</div>
-                                                        <div class="window-table-list-cell">96</div>
-                                                    </div>
-                                                    <div class="window-table-list-row">
-                                                        <div class="window-table-list-cell">M</div>
-                                                        <div class="window-table-list-cell">44</div>
-                                                        <div class="window-table-list-cell">168-172</div>
-                                                        <div class="window-table-list-cell">90</div>
-                                                        <div class="window-table-list-cell">72</div>
-                                                        <div class="window-table-list-cell">102</div>
-                                                    </div>
-                                                    <div class="window-table-list-row">
-                                                        <div class="window-table-list-cell">L</div>
-                                                        <div class="window-table-list-cell">46</div>
-                                                        <div class="window-table-list-cell">168-175</div>
-                                                        <div class="window-table-list-cell">96</div>
-                                                        <div class="window-table-list-cell">77</div>
-                                                        <div class="window-table-list-cell">108</div>
-                                                    </div>
+                                        <a href="#" class="card-info-block-title">Обмеры изделия<svg><use xlink:href="images/sprite.svg#card-info-block-title"></use></svg></a>
+                                        <div class="card-info-block-container">
+                                            <div class="card-info-block-params">
+                                                <div class="card-info-block-param">
+                                                    <div class="card-info-block-param-title">Размер</div>
+                                                    <div class="card-info-block-param-value">XS</div>
                                                 </div>
-                                                <div class="window-table-measurements">
-                                                    <div class="window-table-measurement">
-                                                        <div class="window-table-measurement-title">Размер XS</div>
-                                                        <div class="window-table-measurement-list">
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Рост модели на фото</div>
-                                                                <div class="window-table-measurement-item-value">180 СМ</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Размер на модели</div>
-                                                                <div class="window-table-measurement-item-value">S</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
-                                                    </div>
-                                                    <div class="window-table-measurement">
-                                                        <div class="window-table-measurement-title">Размер S</div>
-                                                        <div class="window-table-measurement-list">
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Рост модели на фото</div>
-                                                                <div class="window-table-measurement-item-value">180 СМ</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Размер на модели</div>
-                                                                <div class="window-table-measurement-item-value">S</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
-                                                    </div>
-                                                    <div class="window-table-measurement">
-                                                        <div class="window-table-measurement-title">Размер M</div>
-                                                        <div class="window-table-measurement-list">
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Рост модели на фото</div>
-                                                                <div class="window-table-measurement-item-value">180 СМ</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Размер на модели</div>
-                                                                <div class="window-table-measurement-item-value">S</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
-                                                    </div>
-                                                    <div class="window-table-measurement">
-                                                        <div class="window-table-measurement-title">Размер L</div>
-                                                        <div class="window-table-measurement-list">
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Длина рукава</div>
-                                                                <div class="window-table-measurement-item-value">62,9 CM</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Рост модели на фото</div>
-                                                                <div class="window-table-measurement-item-value">180 СМ</div>
-                                                            </div>
-                                                            <div class="window-table-measurement-item">
-                                                                <div class="window-table-measurement-item-title">Размер на модели</div>
-                                                                <div class="window-table-measurement-item-value">S</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="window-table-measurement-notice">В обмерах возможна погрешность +/- 0,5 см</div>
-                                                    </div>
+                                                <div class="card-info-block-param">
+                                                    <div class="card-info-block-param-title">Длина рукава, см</div>
+                                                    <div class="card-info-block-param-value">40</div>
+                                                </div>
+                                                <div class="card-info-block-param">
+                                                    <div class="card-info-block-param-title">Длина изделия, см</div>
+                                                    <div class="card-info-block-param-value">84</div>
+                                                </div>
+                                                <div class="card-info-block-param">
+                                                    <div class="card-info-block-param-title">Обхват талии, см</div>
+                                                    <div class="card-info-block-param-value">64</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -798,6 +860,14 @@
                                     <div class="footer-contacts-item-title">Почта</div>
                                     <div class="footer-contacts-item-value"><a href="mailto:info@vovsuda.com">info@vovsuda.com</a></div>
                                 </div>
+                                <div class="footer-contacts-item footer-social">
+                                    <div class="footer-contacts-item-title">Социальные сети</div>
+                                    <div class="footer-social-list">
+                                        <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-tg"></use></svg></a>
+                                        <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-yt"></use></svg></a>
+                                        <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-vk"></use></svg></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="footer-column">
@@ -864,6 +934,14 @@
                                     </div>
                                     <div class="footer-subscribe-notice">Подписываясь на&nbsp;рассылку, я&nbsp;соглашаюсь с&nbsp;условиями <a href="#">&laquo;Политики конфиденциальности&raquo;</a></div>
                                 </form>
+                            </div>
+                            <div class="footer-contacts-item footer-social-mobile">
+                                <div class="footer-contacts-item-title">Социальные сети</div>
+                                <div class="footer-social-list">
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-tg"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-yt"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-vk"></use></svg></a>
+                                </div>
                             </div>
                         </div>
                     </div>
