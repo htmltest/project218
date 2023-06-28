@@ -822,12 +822,21 @@ header.inverse .header-user-link svg {stroke:#FFFFFF}
     .catalogue-side-menu ul li a:hover {color:#18171F}
 }
 .catalogue-side-menu ul li.active a {color:#18171F}
+.catalogue-filter-mobile-link {display:none}
 
 @media (max-width:1231px) {
-    .catalogue-side {min-width:0; max-width:none}
-    .catalogue-side-title {margin:0; font-size:20px; line-height:22px; letter-spacing:-0.01em}
+    .catalogue-side {min-width:0; max-width:none; display:flex; align-items:center}
+    .catalogue-side-title {margin:0; font-size:20px; line-height:22px; letter-spacing:-0.01em; width:100%}
     .catalogue-side-title br {display:none}
     .catalogue-side-menu {display:none}
+    .catalogue-filter-mobile-link {display:block; white-space:nowrap}
+    .catalogue-filter-mobile-link a {display:block; padding:0 8px; height:22px; font-weight:600; font-size:11px; line-height:22px; letter-spacing:0.02em; background:#F2F2F2; border-radius:11px; color:#6B645C; text-decoration:none; text-transform:uppercase}
+    .catalogue-filter-mobile-link a svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 6px; width:16px; height:16px}
+    .catalogue-filter-mobile-link a span {display:none; margin:0 0 0 6px}
+    .catalogue-filter-mobile-link a span.visible {display:inline}
+
+    .catalogue-filter-open,
+    .catalogue-filter-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
 }
 
 .catalogue-container {width:100%; margin:0 0 0 20px}
@@ -837,6 +846,7 @@ header.inverse .header-user-link svg {stroke:#FFFFFF}
 }
 
 .catalogue-ctrl {margin:0 0 24px 0; white-space:nowrap}
+.catalogue-ctrl-header {display:none}
 .catalogue-ctrl form {display:flex; margin:0; padding:0}
 .catalogue-sort {order:1}
 .catalogue-sort-container {position:relative}
@@ -876,6 +886,8 @@ header.inverse .header-user-link svg {stroke:#FFFFFF}
     .catalogue-filter-item-title:hover svg {fill:#18171F}
 }
 .catalogue-filter-item.open .catalogue-filter-item-title svg {transform:rotate(-180deg)}
+.catalogue-filter-item-title em {display:none}
+.catalogue-filter-item-title svg.catalogue-filter-list-item-color {display:none}
 .catalogue-filter-item-remove {display:none; position:absolute; right:0; top:0; bottom:0; width:20px; background:#F5F5F5}
 .catalogue-filter-item.active .catalogue-filter-item-remove {display:block}
 .catalogue-filter-item-remove svg {position:absolute; left:0; top:50%; width:12px; height:12px; margin:-6px 0 0 0; fill:none; stroke:#6B645C; transition:stroke 0.2s; transform:none}
@@ -911,9 +923,65 @@ header.inverse .header-user-link svg {stroke:#FFFFFF}
 }
 .catalogue-filter-slider-btn {margin:23px 0 0 0}
 .catalogue-filter-slider-btn .btn-border {width:100%; padding:8px 0; font-size:11px; line-height:17px; letter-spacing:0.02em}
+.catalogue-ctrl-bottom {display:none}
 
 @media (max-width:1231px) {
-    .catalogue-ctrl {display:none}
+    .catalogue-ctrl {display:none; position:fixed; left:0; top:0; right:0; bottom:0; background:rgba(9, 9, 9, 0.16); margin:0; white-space:normal; overflow:auto; z-index:99999; font-size:0; line-height:0; letter-spacing:-1px}
+    .catalogue-ctrl::before {content:""; display:inline-block; width:0; height:100%}
+    .catalogue-filter-open .catalogue-ctrl {display:block}
+    .catalogue-ctrl form {display:inline-block; vertical-align:bottom; width:100%; background:#FFFFFF; border-radius:12px 12px 0 0; font-size:14px; line-height:21px; letter-spacing:0; position:relative}
+    .catalogue-ctrl-header {position:relative; display:block}
+    .catalogue-ctrl-title {display:block; padding:24px 12px; font-weight:500; font-size:16px; line-height:1.1em; letter-spacing:-0.01em; text-transform:uppercase; color:#6B645C}
+    .catalogue-ctrl-close {position:absolute; right:0; top:0; width:40px; height:66px}
+    .catalogue-ctrl-close svg {position:absolute; left:50%; top:50%; width:16px; height:16px; margin:-8px 0 0 -8px; fill:none; stroke:#A6A29D}
+    .catalogue-sort {border-top:1px solid #EBEBEA; padding:10px 12px 22px 12px}
+    .catalogue-sort-title {color:#18171F; line-height:2em}
+    .catalogue-sort-title svg {display:none}
+    .catalogue-sort-list {display:block; position:relative; right:auto; top:auto; margin-top:12px; z-index:auto; background:none; border:none; box-shadow:none; font-size:12px; line-height:18px}
+    .catalogue-sort-item {margin:16px 0 0 0}
+    .catalogue-sort-item:first-child {margin:0}
+    .catalogue-sort-item span {padding:0 0 0 23px; color:#18171F; position:relative}
+    .catalogue-sort-item svg {display:none}
+    .catalogue-sort-item span::before {content:""; position:absolute; left:0; top:1px; width:16px; height:16px; border:1px solid #6B645C; border-radius:50%; transition:border-width 0.2s}
+    .catalogue-sort-item input:checked+span::before {border-width:5px}
+    .catalogue-filter {display:block; border-top:1px solid #EBEBEA}
+    .catalogue-filter-item {margin:0; border-bottom:1px solid #EBEBEA}
+    .catalogue-filter-item-title {padding:10px 40px 10px 12px; line-height:2em; color:#18171F}
+    .catalogue-filter-item.active .catalogue-filter-item-title {padding:10px 40px 10px 12px; background:none}
+    .catalogue-filter-item.active .catalogue-filter-item-title span {display:none}
+    .catalogue-filter-item.active .catalogue-filter-item-title strong {display:none}
+    .catalogue-filter-item-title svg {display:block; position:absolute; right:12px; top:50%; margin:-8px 0 0 0; width:16px; height:16px; fill:#A6A29D; transform:rotate(-90deg)}
+    .catalogue-filter-item.open .catalogue-filter-item-title svg {transform:rotate(-90deg)}
+    .catalogue-filter-item-title em {display:inline-block; vertical-align:middle; margin:-2px 4px 0 0; height:22px; padding:0 8px; font-size:11px; line-height:22px; font-weight:500; letter-spacing:0; text-transform:uppercase; color:#18171F; background:#F5F5F5; border-radius:4px; font-style:normal}
+    .catalogue-filter-item-title svg+em,
+    .catalogue-filter-item-title a+em {margin-left:12px}
+    .catalogue-filter-item-title svg.catalogue-filter-list-item-color {position:relative; right:auto; top:auto; display:inline-block; vertical-align:middle; margin:-2px 4px 0 0; width:28px; height:17px; opacity:1; stroke:none; transform:none}
+    .catalogue-filter-item-title a+svg.catalogue-filter-list-item-color {margin-left:12px}
+    .catalogue-filter-item.active .catalogue-filter-item-remove {display:none}
+    .catalogue-ctrl-bottom {display:block; padding:24px 12px}
+    .catalogue-ctrl-submit .btn {width:100%}
+    .catalogue-ctrl-clear {margin:12px 0 0 0; text-align:center; font-weight:600; font-size:11px; line-height:17px; letter-spacing:0.02em; text-transform:uppercase}
+    .catalogue-ctrl-clear a {text-decoration:none; color:#6B645C}
+
+    .catalogue-filter-item-open .catalogue-ctrl-title {opacity:0}
+    .catalogue-filter-item-open .catalogue-sort {display:none}
+    .catalogue-filter-item-open .catalogue-filter-item {display:none}
+    .catalogue-filter-item-open .catalogue-filter-item.open {display:block; position:static}
+    .catalogue-filter-item-open .catalogue-filter-item-title {position:absolute; left:0; top:0; right:40px; padding:24px 0 24px 34px; font-size:16px; line-height:1.1em; font-weight:500; color:#6B645C}
+    .catalogue-filter-item-open .catalogue-filter-item.active .catalogue-filter-item-title {padding:24px 0 24px 34px}
+    .catalogue-filter-item-open .catalogue-filter-item.open .catalogue-filter-item-title svg {transform:rotate(-270deg); right:0; left:12px; top:24px; margin:0}
+    .catalogue-filter-item-open .catalogue-filter-item-title em {display:none}
+    .catalogue-filter-item-open .catalogue-filter-item-title svg.catalogue-filter-list-item-color {display:none}
+
+    .catalogue-filter-item-content {position:relative; left:auto; top:auto; margin-top:0; z-index:auto; background:none; border:none; box-shadow:none}
+    .catalogue-filter-list {font-weight:500; font-size:13px; line-height:2em; text-transform:uppercase}
+    .catalogue-filter-list-item {border-bottom:1px solid #EBEBEA}
+    .catalogue-filter-list-item span {padding:10px 40px 10px 12px; color:#6B645C}
+    .catalogue-filter-list-item input:checked+span {color:#18171F}
+    .catalogue-filter-list-item svg {right:12px}
+    .catalogue-filter-list-item svg.catalogue-filter-list-item-color {margin:-2px 8px 0 0; width:24px; height:16px}
+
+    .catalogue-filter-slider {width:auto}
 }
 
 .catalogue-list {margin:0 -6px}
@@ -1766,7 +1834,7 @@ footer a {color:#FFFFFF; text-decoration:none}
     .window-table {width:468px; padding:24px}
 }
 
-.window-favourite {width:353px; padding:24px}
+.window-favourite {width:609px; padding:48px}
 .window-favourite h2 {margin:0}
 .window-favourite-text {margin:24px 0 0 0}
 .window-favourite-text p {margin:12px 0 0 0}
