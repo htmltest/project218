@@ -183,4 +183,14 @@
         <path d="M11.333 10.666H15.333" stroke="#6B645C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 40 40" id="window-photo-close">
+        <path d="M27.4246 12.5762L12.5753 27.4254" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12.5754 12.5762L27.4247 27.4254" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 16 16" id="collection-detail-item-header-close">
+        <path d="M12.9492 3.05078L3.04972 12.9503" stroke="#A6A29D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M3.05078 3.05078L12.9503 12.9503" stroke="#A6A29D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
