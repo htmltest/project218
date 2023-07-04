@@ -193,4 +193,9 @@
         <path d="M3.05078 3.05078L12.9503 12.9503" stroke="#A6A29D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 24 24" id="window-collections-close">
+        <path d="M16.5 7.5L7.5 16.5" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7.5 7.5L16.5 16.5" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>

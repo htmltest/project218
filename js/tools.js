@@ -804,6 +804,116 @@ $(document).ready(function() {
         }
     });
 
+    $('body').on('click', '.collections-item a', function(e) {
+        if ($(window).width() < 1232) {
+            var curLink = $(this);
+
+            $('.wrapper').data('curScroll', $(window).scrollTop());
+            $('html').addClass('window-collections-open');
+
+            var windowHTML =    '<div class="window-collections">';
+
+            windowHTML +=           '<a href="#" class="window-collections-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-collections-close"></use></svg></a>';
+
+            windowHTML +=           '<div class="window-collections-loading"></div>';
+
+            windowHTML +=       '</div>';
+
+            $('.window-collections').remove();
+            $('body').append(windowHTML);
+
+            $.ajax({
+                type: 'POST',
+                url: curLink.attr('href'),
+                dataType: 'html',
+                cache: false
+            }).done(function(html) {
+                var newHTML = $(html);
+                windowHTML =    '<div class="window-collections-container">';
+                windowHTML +=       '<div class="window-collections-slider">';
+
+                if (newHTML.find('.collection-header').length == 1) {
+                    windowHTML +=       '<div class="window-collections-item window-collections-item-start">' +
+                                            '<div class="window-collections-item-inner">' +
+                                                '<div class="window-collections-item-preview" style="background-image:url(' + newHTML.find('.collection-header > img').attr('src') + ')"></div>' +
+                                            '</div>' +
+                                        '</div>';
+                }
+
+                newHTML.find('.collection-detail-item').each(function() {
+                    var curItem = $(this);
+                    windowHTML +=       '<div class="window-collections-item">' +
+                                            '<div class="window-collections-item-inner">' +
+                                                '<div class="window-collections-item-preview" style="background-image:url(' + curItem.find('.collection-detail-item-img > img').attr('src') + ')"></div>' +
+                                                '<div class="window-collections-item-content">' + curItem.find('.collection-detail-item-content').html() + '</div>' +
+                                            '</div>' +
+                                        '</div>';
+                });
+
+                windowHTML +=       '</div>';
+
+                windowHTML +=       '<div class="window-collections-info">';
+                if (newHTML.find('.collection-header-title').length == 1) {
+                    windowHTML +=       '<div class="window-collections-info-title">' + newHTML.find('.collection-header-title').html() + '</div>';
+                }
+                if (newHTML.find('.collection-detail-descr-inner').length == 1) {
+                    windowHTML +=       '<div class="window-collections-info-text">' + newHTML.find('.collection-detail-descr-inner').html() + '</div>';
+                }
+                windowHTML +=           '<a href="#" class="window-collections-info-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#header-cart"></use></svg></a>';
+                windowHTML +=       '</div>';
+                windowHTML +=   '</div>';
+
+                $('.window-collections-loading').remove();
+                $('.window-collections').append(windowHTML);
+
+                $('.window-collections-slider').slick({
+                    infinite: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }).on('setPosition', function(event, slick) {
+                    var currentSlide = $('.window-collections-slider').slick('slickCurrentSlide');
+                    var curSlide = $('.window-collections-item').eq(currentSlide);
+                    if (curSlide.find('.window-collections-item-content').length == 1) {
+                        $('.window-collections-info-link').addClass('visible');
+                    } else {
+                        $('.window-collections-info-link').removeClass('visible');
+                    }
+                });
+
+            });
+
+            e.preventDefault();
+        }
+    });
+
+    $('body').on('click', '.window-collections-info-link', function(e) {
+        var curSlider = $('.window-collections-slider');
+        curSlider.addClass('disabled');
+        var currentSlide = $('.window-collections-slider').slick('slickCurrentSlide');
+        var curSlide = $('.window-collections-item').eq(currentSlide);
+        var windowHTML =    '<div class="window-collections-detail">' +
+                                curSlide.find('.window-collections-item-content').html() +
+                            '</div>';
+        $('body').append(windowHTML);
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-collections-close', function(e) {
+        $('.window-collections').remove();
+        $('.window-collections-detail').remove();
+        $('html').removeClass('window-collections-open');
+        $(window).scrollTop($('.wrapper').data('curScroll'));
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.collection-detail-item-header-close', function(e) {
+        $('.window-collections-detail').remove();
+        $('.window-collections-slider').removeClass('disabled');
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
@@ -1065,20 +1175,13 @@ $(window).on('load resize', function() {
         }
     });
 
-    $('.collection-detail').each(function() {
-        if ($('.collection-detail').hasClass('slick-slider')) {
-            $('.collection-detail').slick('unslick');
-        }
-        if ($(window).width() < 1232) {
-            $('.collection-detail').slick({
-                infinite: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: true,
-                adaptiveHeight: true
-            });
-        }
-    });
+});
 
+$(window).on('load resize scroll', function() {
+    var windowScroll = $(window).scrollTop();
+    if (windowScroll > 0) {
+        $('header').addClass('fixed');
+    } else {
+        $('header').removeClass('fixed');
+    }
 });
