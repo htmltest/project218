@@ -135,10 +135,6 @@ $(document).ready(function() {
         });
     });
 
-    $('.footer-subscribe-input input').focus(function() {
-        $('.footer-subscribe-notice').addClass('visible');
-    });
-
     $('.footer-subscribe form').each(function() {
         var curForm = $(this);
         var validator = curForm.validate();
@@ -1051,6 +1047,10 @@ function windowOpenHTML(html) {
     }
 
     if ($('.window .window-table').length == 1) {
+        var curIndex = $('.card-info-sizes input').index($('.card-info-sizes input:checked'));
+        if (curIndex > -1) {
+            $('.window .window-table-list-row').eq(curIndex).trigger('click');
+        }
         $('.window').addClass('window-from-side');
     }
 

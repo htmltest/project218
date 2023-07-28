@@ -198,4 +198,12 @@
         <path d="M7.5 7.5L16.5 16.5" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 20 20" id="icon-doc">
+        <path d="M11.6654 1.66602H4.9987C4.55667 1.66602 4.13275 1.84161 3.82019 2.15417C3.50763 2.46673 3.33203 2.89065 3.33203 3.33268V16.666C3.33203 17.108 3.50763 17.532 3.82019 17.8445C4.13275 18.1571 4.55667 18.3327 4.9987 18.3327H14.9987C15.4407 18.3327 15.8646 18.1571 16.1772 17.8445C16.4898 17.532 16.6654 17.108 16.6654 16.666V6.66602L11.6654 1.66602Z" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11.6641 1.66602V6.66602H16.6641" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M13.3307 10.834H6.66406" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M13.3307 14.166H6.66406" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.33073 7.5H7.4974H6.66406" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
