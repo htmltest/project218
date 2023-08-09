@@ -1174,6 +1174,12 @@ $(window).on('load resize', function() {
             });
         }
     });
+    
+    window.setTimeout(function() {
+        $('.main-catalogue .slick-arrow').each(function() {
+            $(this).css({'top': $('.catalogue-item-preview').eq(0).outerHeight() / 2});
+        });
+    }, 500);
 
 });
 

@@ -2084,7 +2084,7 @@ footer a {color:#FFFFFF; text-decoration:none}
 
 .return-steps {margin:128px -6px 0 -6px; display:flex; flex-wrap:wrap}
 .return-step {min-width:33.33%; max-width:33.33%; display:flex; padding:12px 6px 0 6px}
-.return-step-inner {background:#F5F5F5; padding:24px}
+.return-step-inner {background:#F5F5F5; padding:24px; width:100%}
 .return-step-inner a {color:#18171F}
 .return-step-title {font-weight:500; font-size:24px; line-height:29px; letter-spacing:-0.03em; text-transform:uppercase}
 .return-step-text {margin:12px 0 0 0}
