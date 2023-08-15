@@ -910,6 +910,10 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.auth-sms-timer').each(function() {
+        updateSMSTimer();
+    });
+
 });
 
 function initForm(curForm) {
@@ -1174,7 +1178,7 @@ $(window).on('load resize', function() {
             });
         }
     });
-    
+
     window.setTimeout(function() {
         $('.main-catalogue .slick-arrow').each(function() {
             $(this).css({'top': $('.catalogue-item-preview').eq(0).outerHeight() / 2});
@@ -1191,3 +1195,15 @@ $(window).on('load resize scroll', function() {
         $('header').removeClass('fixed');
     }
 });
+
+function updateSMSTimer() {
+    var curTime = Number($('.auth-sms-timer span').html());
+    curTime--;
+    if (curTime < 1) {
+        curTime = 0;
+    }
+    $('.auth-sms-timer span').html(curTime);
+    if (curTime > 0) {
+        window.setTimeout(updateSMSTimer, 1000);
+    }
+}
