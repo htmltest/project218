@@ -207,19 +207,90 @@
                     </div>
                 </header>
 
-                <div class="auth">
-                    <div class="auth-content">
-                        <h2>Вход или регистрация</h2>
-                        <div class="auth-text">Введите код, который мы выслали на номер +7 (921) 323-23-23</div>
-                        <div class="auth-form">
-                            <form action="#" method="post">
-                                <div class="form-input"><input type="text" name="code" value="" placeholder="------" class="required codeSMS"></div>
-                            </form>
+                <!-- container -->
+                <div class="container">
+
+                    <!-- cabinet -->
+                    <div class="cabinet">
+
+                        <!-- cabinet side -->
+                        <div class="cabinet-side">
+                            <div class="breadcrumbs"><a href="#">Вовсюда</a><span>/</span>Блог стилиста</div>
+                            <h2>личный кабинет</h2>
+                            <div class="cabinet-menu">
+                                <ul>
+                                    <li><a href="#">История заказов</a></li>
+                                    <li class="active"><a href="#">Личный данные</a></li>
+                                    <li><a href="#">Бонусные баллы</a></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="auth-sms-timer">Повторная отправка через <span>46</span> сек</div>
+                        <!-- cabinet side END -->
+
+                        <!-- cabinet container -->
+                        <div class="cabinet-container">
+
+                            <!-- cabinet profile -->
+                            <div class="cabinet-profile">
+                                <h3>Личные данные</h3>
+                                <form action="#" method="post">
+                                    <div class="form-input"><span>Телефон</span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU"></div>
+                                    <div class="form-input"><span>Электронная почта</span><input type="email" name="email" value="Email@gmail.com" class="required email"></div>
+                                    <div class="cabinet-profile-row">
+                                        <div class="cabinet-profile-row-field">
+                                            <div class="form-input"><span>Имя</span><input type="text" name="firstname" value="Борис" class="required"></div>
+                                        </div>
+                                        <div class="cabinet-profile-row-field">
+                                            <div class="form-input"><span>Фамилия</span><input type="text" name="lastname" value="Борисов" class="required"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-input"><span>Дата рождения</span><input type="text" name="birthday" value=""></div>
+                                    <div class="cabinet-profile-row">
+                                        <div class="cabinet-profile-row-field">
+                                            <div class="form-select">
+                                                <select name="size_clothing" data-placeholder="Размер одежды">
+                                                    <option value=""></option>
+                                                    <option value="S">S</option>
+                                                    <option value="M">M</option>
+                                                    <option value="L">L</option>
+                                                    <option value="XL">XL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="cabinet-profile-row-field">
+                                            <div class="form-select">
+                                                <select name="size_shoe" data-placeholder="Размер обуви">
+                                                    <option value=""></option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                    <option value="41">41</option>
+                                                    <option value="42">42</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cabinet-profile-submit"><input type="submit" value="Сохранить" class="btn"></div>
+                                </form>
+                                <div class="cabinet-profile-password">
+                                    <div class="cabinet-profile-password-title"><a href="#">Изменить пароль</a></div>
+                                    <form action="#" method="post">
+                                        <div class="form-input"><span>Пароль</span><input type="password" name="password" class="required" id="password"></div>
+                                        <div class="form-input"><span>Пароль</span><input type="password" name="repassword" class="required" equalTo="#password"></div>
+                                        <div class="cabinet-profile-password-submit"><input type="submit" value="Изменить пароль" class="btn-border"></div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- cabinet profile END -->
+
+                        </div>
+                        <!-- cabinet container END -->
+
                     </div>
-                    <div class="auth-img"><img src="images/auth.jpg" alt=""></div>
+                    <!-- cabinet END -->
+
                 </div>
+                <!-- container END -->
 
             </div>
 
