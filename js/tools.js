@@ -439,6 +439,23 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.catalogue-filter-reset').click(function(e) {
+        $('.catalogue-filter-item.active').each(function() {
+            var curItem = $(this);
+            curItem.find('.catalogue-filter-list input').prop('checked', false);
+            curItem.find('.catalogue-filter-item-title span').html('0');
+            var curSlider = curItem.find('.catalogue-filter-slider .form-slider');
+            if (curSlider.length == 1) {
+                var curRange = curSlider.find('.form-slider-range-inner')[0];
+                curRange.noUiSlider.set([0, 9999999999], true, true);
+            }
+            curItem.removeClass('active open');
+        });
+        updateCatalogueFilterMobile();
+        updateCatalogue();
+        e.preventDefault();
+    });
+
     $('body').on('click', '.catalogue-container .pager a', function(e) {
         var curLink = $(this);
         if (!curLink.hasClass('active')) {
@@ -518,7 +535,7 @@ $(document).ready(function() {
     });
 
     $('body').on('click', '.card-media-item-video-link', function(e) {
-        var newHTML = '<video autoplay muted loop controls><source src="' + $(this).attr('href') + '" type="video/mp4" /></video>';
+        var newHTML = '<iframe width="560" height="315" src="' + $(this).attr('href') + '?autoplay=1&controls=0&rel=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
         var curItem = $(this).parent();
         curItem.append(newHTML);
         $(this).remove();
@@ -557,6 +574,7 @@ $(document).ready(function() {
             curValue = 1;
         }
         curInput.val(curValue);
+        recalcCart();
     });
 
     $('body').on('click', '.cart-item-count-inc', function(e) {
@@ -564,6 +582,7 @@ $(document).ready(function() {
         var curValue = Number(curField.find('input').val());
         curValue++;
         curField.find('input').val(curValue);
+        recalcCart();
         e.preventDefault();
     });
 
@@ -575,12 +594,14 @@ $(document).ready(function() {
             curValue = 1;
         }
         curField.find('input').val(curValue);
+        recalcCart();
         e.preventDefault();
     });
 
     $('body').on('click', '.cart-item-remove a', function(e) {
         windowOpenHTML($('#window-cart-remove').html());
         $('.window .window-cart-remove-btn-apply').attr('data-id', $(this).parents().filter('.cart-item').attr('data-id'));
+        recalcCart();
         e.preventDefault();
     });
 
@@ -588,6 +609,7 @@ $(document).ready(function() {
         var curID = $(this).attr('data-id');
         $('.cart-item[data-id="' + curID + '"]').remove();
         $('.header-cart-item[data-id="' + curID + '"]').remove();
+        recalcCart();
         windowClose();
         e.preventDefault();
     });
@@ -677,6 +699,7 @@ $(document).ready(function() {
     $('.header-search-link').click(function(e) {
         var curScroll = $(window).scrollTop();
         $('html').addClass('search-open');
+        $('.search-window-form-input input').focus();
         $('.wrapper').data('curScroll', curScroll);
         e.preventDefault();
     });
@@ -926,6 +949,128 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.cart-side-promo-link a').click(function(e) {
+        $('.cart-side-promo').addClass('open');
+        e.preventDefault();
+    });
+
+    $('.cart-side-promo-send').click(function(e) {
+        var curInput = $('.cart-side-promo-form .form-input input');
+        curInput.parent().find('label.error').remove();
+        curInput.removeClass('error');
+        if (curInput.val() == '') {
+            curInput.parent().append('<label class="error">' + curInput.attr('data-error') + '</label>');
+            curInput.addClass('error');
+        } else {
+            $('.cart-side-promo-form').addClass('loading');
+            $.ajax({
+                type: 'POST',
+                url: $('.cart-side-promo-send').attr('href'),
+                dataType: 'json',
+                data: 'promo=' + curInput.val(),
+                cache: false
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                curInput.parent().append('<label class="error">Сервис временно недоступен, попробуйте позже.</label>');
+                $('.cart-side-promo-form').removeClass('loading');
+            }).done(function(data) {
+                if (data.status) {
+                    $('.cart-side-promo-form').addClass('success');
+                    curInput.prop('disabled', true);
+                    curInput.parent().append('<label class="error success">' + data.message + '</label>');
+                    $('#cart-side-discount').html('-' + data.discount);
+                    $('.cart-side-row-discount').addClass('visible');
+                } else {
+                    curInput.parent().append('<label class="error">' + data.message + '</label>');
+                    $('#cart-side-discount').html('0');
+                    $('.cart-side-row-discount').removeClass('visible');
+                }
+                recalcCart();
+                $('.cart-side-promo-form').removeClass('loading');
+            });
+        }
+        e.preventDefault();
+    });
+
+    $('.cart-side-promo-reset').click(function(e) {
+        var curInput = $('.cart-side-promo-form .form-input input');
+        curInput.parent().find('label.error').remove();
+        curInput.removeClass('error');
+        $('.cart-side-promo-form').addClass('loading');
+        $.ajax({
+            type: 'POST',
+            url: $('.cart-side-promo-reset').attr('href'),
+            dataType: 'json',
+            data: 'promo=' + curInput.val(),
+            cache: false
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            curInput.parent().append('<label class="error">Сервис временно недоступен, попробуйте позже.</label>');
+            $('.cart-side-promo-form').removeClass('loading');
+        }).done(function(data) {
+            if (data.status) {
+                $('.cart-side-promo-form').removeClass('success');
+                curInput.prop('disabled', false);
+                curInput.val('').blur();
+                $('#cart-side-discount').html('0');
+                $('.cart-side-row-discount').removeClass('visible');
+                recalcCart();
+            } else {
+                curInput.parent().append('<label class="error">' + data.message + '</label>');
+            }
+            $('.cart-side-promo-form').removeClass('loading');
+        });
+        e.preventDefault();
+    });
+
+    $('.cart-side-promo-form .form-input input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            $('.cart-side-promo-send').click();
+            e.preventDefault();
+        }
+    });
+
+    $('#order-city').change(function() {
+        $('.order-delivery').addClass('visible');
+        $('.order-payment').addClass('visible');
+    });
+
+    $('.order-delivery-list input').change(function() {
+        if ($('#delivery-self').prop('checked')) {
+            $('.order-delivery-detail').removeClass('visible');
+            $('.order-comment').removeClass('visible');
+        } else {
+            $('.order-delivery-detail').addClass('visible');
+            $('.order-comment').addClass('visible');
+        }
+        recalcCart();
+    });
+
+    $('.order-delivery-list').each(function(e) {
+        $('.order-delivery-list input').eq(0).change();
+    });
+
+    $('#order-phone').change(function() {
+        var curInput = $(this);
+        if (curInput.val() != '') {
+            curInput.parent().addClass('loading');
+            $.ajax({
+                type: 'POST',
+                url: curInput.attr('data-check'),
+                dataType: 'json',
+                data: 'phone=' + curInput.val(),
+                cache: false
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                curInput.parent().removeClass('loading');
+            }).done(function(data) {
+                if (data.status) {
+                    curInput.parent().find('.order-phone-has').addClass('visible');
+                } else {
+                    curInput.parent().find('.order-phone-has').removeClass('visible');
+                }
+                curInput.parent().removeClass('loading');
+            });
+        }
+    });
+
 });
 
 function initForm(curForm) {
@@ -948,6 +1093,17 @@ function initForm(curForm) {
         $(this).val($(this).val()).change();
     });
 
+    var indexFormInput = 0;
+    curForm.find('.form-input-date input').each(function() {
+        var curInput = $(this);
+        curInput.attr('autocomplete', 'off');
+        curInput.prop('readonly', true);
+        var curID = 'form-input-date-id-' + indexFormInput;
+        curInput.attr('id', curID);
+        indexFormInput++;
+        new AirDatepicker('#' + curID);
+    });
+
     curForm.find('.form-select select').each(function() {
         var curSelect = $(this);
         var options = {
@@ -956,6 +1112,24 @@ function initForm(curForm) {
 
         if (curSelect.parents().filter('.window').length == 1) {
             options['dropdownParent'] = $('.window-container');
+        }
+
+        if (curSelect.parent().hasClass('form-select-ajax-city')) {
+            options['ajax'] = {
+                url: curSelect.parent().attr('data-link'),
+                dataType: 'json',
+                data: function (params) {
+                    var query = {
+                        term: params.term,
+                        _type: params._type
+                    }
+                    return query;
+                }
+            };
+            options['minimumInputLength'] = 3;
+            options['placeholder'] = curSelect.parent().attr('data-placeholder');
+            options['templateResult'] = formatRepoCity;
+            options['templateSelection'] = formatRepoSelectionCity;
         }
 
         curSelect.select2(options);
@@ -1247,8 +1421,10 @@ function updateCatalogueFilterMobile() {
     });
     if (countFilter > 0) {
         $('.catalogue-filter-mobile-link span').html('(' + countFilter + ')').addClass('visible');
+        $('.catalogue-filter-reset').addClass('visible');
     } else {
         $('.catalogue-filter-mobile-link span').html('(' + countFilter + ')').removeClass('visible');
+        $('.catalogue-filter-reset').removeClass('visible');
     }
 
 }
@@ -1308,6 +1484,46 @@ $(window).on('load resize scroll', function() {
     } else {
         $('header').removeClass('fixed');
     }
+
+    $('.order-onestep .cart-side').each(function() {
+        var curBlock = $(this);
+        var offsetTop = 68;
+        if (windowScroll > curBlock.offset().top - offsetTop) {
+            curBlock.addClass('fixed');
+            if (windowScroll + offsetTop + curBlock.find('.cart-side-inner').outerHeight() > $('.order-onestep').offset().top + $('.order-onestep').outerHeight()) {
+                curBlock.find('.cart-side-inner').css({'margin-top': ($('.order-onestep').offset().top + $('.order-onestep').outerHeight()) - (windowScroll + offsetTop + $('.cart-side-inner').outerHeight())});
+            } else {
+                curBlock.find('.cart-side-inner').css({'margin-top': 0});
+            }
+        } else {
+            curBlock.removeClass('fixed');
+        }
+    });
+
+    $('.catalogue-side').each(function() {
+        var curBlock = $(this);
+        var offsetTop = 45;
+        if (windowScroll > curBlock.offset().top - offsetTop) {
+            curBlock.addClass('fixed');
+            if (windowScroll + offsetTop + curBlock.find('.catalogue-side-inner').outerHeight() > $('.catalogue').offset().top + $('.catalogue').outerHeight()) {
+                curBlock.find('.catalogue-side-inner').css({'margin-top': ($('.catalogue').offset().top + $('.catalogue').outerHeight()) - (windowScroll + offsetTop + $('.catalogue-side-inner').outerHeight())});
+            } else {
+                curBlock.find('.catalogue-side-inner').css({'margin-top': 0});
+            }
+        } else {
+            curBlock.removeClass('fixed');
+        }
+    });
+
+    $('.catalogue-ctrl').each(function() {
+        var curBlock = $(this);
+        var offsetTop = 70;
+        if (windowScroll > curBlock.offset().top - offsetTop) {
+            curBlock.addClass('fixed');
+        } else {
+            curBlock.removeClass('fixed');
+        }
+    });
 });
 
 function updateSMSTimer() {
@@ -1319,5 +1535,50 @@ function updateSMSTimer() {
     $('.auth-sms-timer span').html(curTime);
     if (curTime > 0) {
         window.setTimeout(updateSMSTimer, 1000);
+    }
+}
+
+function formatRepoCity(repo) {
+    if (repo.loading) {
+        return repo.text;
+    }
+
+    var $container = $(
+        '<div class="select2-result-city">' +
+            '<div class="select2-result-city-title"></div>' +
+            '<div class="select2-result-city-description"></div>' +
+        '</div>'
+    );
+
+    $container.find('.select2-result-city-title').text(repo.text);
+    $container.find('.select2-result-city-description').text(repo.description);
+
+    return $container;
+}
+
+function formatRepoSelectionCity(repo) {
+    return repo.text;
+}
+
+function recalcCart() {
+    var cartSumm = 0;
+    $('.cart-item').each(function() {
+        var curItem = $(this);
+        var itemCount = Number(curItem.find('.cart-item-count-container input').val());
+        var itemSumm = Number(curItem.find('.cart-item-price span').text().replace(/\ /g, ''));
+        cartSumm += (itemCount * itemSumm);
+    });
+    $('#cart-side-cost').html(String(cartSumm).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+    var curDelivery = $('.order-delivery-list input:checked');
+    if (curDelivery.length == 1) {
+        var deliveryCost = Number(curDelivery.attr('data-price'));
+        $('#cart-side-delivery').html(curDelivery.attr('data-title'));
+        var curCost = Number($('#cart-side-cost').html().replace(/\ /g, ''));
+        var curDiscount = 0;
+        if ($('.cart-side-row-discount.visible').length == 1) {
+            curDiscount = Number($('#cart-side-discount').html().replace(/\ /g, ''));
+        }
+        var curSumm = deliveryCost + curCost + curDiscount;
+        $('#cart-side-summ').html(String(curSumm).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
     }
 }

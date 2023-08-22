@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -421,7 +422,7 @@
                                                     <a href="#" class="cart-item-count-inc"><svg><use xlink:href="images/sprite.svg#cart-item-count-inc"></use></svg></a>
                                                 </div>
                                             </div>
-                                            <div class="cart-item-price">7 980 ₽</div>
+                                            <div class="cart-item-price"><span>7 980</span> ₽</div>
                                             <div class="cart-item-remove"><a href="#"><svg><use xlink:href="images/sprite.svg#cart-remove"></use></svg></a></div>
                                         </div>
                                         <!-- cart item END -->
@@ -467,7 +468,7 @@
                                                     <a href="#" class="cart-item-count-inc"><svg><use xlink:href="images/sprite.svg#cart-item-count-inc"></use></svg></a>
                                                 </div>
                                             </div>
-                                            <div class="cart-item-price">7 980 ₽</div>
+                                            <div class="cart-item-price"><span>7 980</span> ₽</div>
                                             <div class="cart-item-remove"><a href="#"><svg><use xlink:href="images/sprite.svg#cart-remove"></use></svg></a></div>
                                         </div>
                                         <!-- cart item END -->
@@ -513,7 +514,7 @@
                                                     <a href="#" class="cart-item-count-inc"><svg><use xlink:href="images/sprite.svg#cart-item-count-inc"></use></svg></a>
                                                 </div>
                                             </div>
-                                            <div class="cart-item-price">7 980 ₽</div>
+                                            <div class="cart-item-price"><span>7 980</span> ₽</div>
                                             <div class="cart-item-remove"><a href="#"><svg><use xlink:href="images/sprite.svg#cart-remove"></use></svg></a></div>
                                         </div>
                                         <!-- cart item END -->
@@ -559,7 +560,7 @@
                                                     <a href="#" class="cart-item-count-inc"><svg><use xlink:href="images/sprite.svg#cart-item-count-inc"></use></svg></a>
                                                 </div>
                                             </div>
-                                            <div class="cart-item-price">7 980 ₽</div>
+                                            <div class="cart-item-price"><span>7 980</span> ₽</div>
                                             <div class="cart-item-remove"><a href="#"><svg><use xlink:href="images/sprite.svg#cart-remove"></use></svg></a></div>
                                         </div>
                                         <!-- cart item END -->
@@ -574,23 +575,159 @@
                     <!-- order -->
                     <div class="order order-onestep">
 
-                        <h2>Оформление заказа</h2>
-
                         <form action="#" method="post" class="order-container">
                             <div class="order-fields">
+                                <div class="order-onestep-header">
+                                    <h2>Оформление заказа</h2>
+                                    <div class="order-onestep-user">
+                                        <div class="order-onestep-user-title">Уже есть аккаунт?</div>
+                                        <div class="order-onestep-user-link"><a href="#" class="btn">Войти</a></div>
+                                    </div>
+                                </div>
+
                                 <div class="form-input"><span>Email<em>*</em></span><input type="email" name="email" value="Email@gmail.com" class="required email"></div>
                                 <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="Имя" class="required"></div>
                                 <div class="form-input"><span>Фамилия<em>*</em></span><input type="text" name="lastname" value="Фамилия" class="required"></div>
-                                <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU"></div>
-                                <div class="form-input"><span>Населенный пункт</span><input type="text" name="city" value=""></div>
-                                <div class="form-input"><span>Улица</span><input type="text" name="street" value=""></div>
-                                <div class="order-fields-row">
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Дом</span><input type="text" name="build" value=""></div>
+                                <div class="form-input">
+                                    <span>Телефон<em>*</em></span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU" id="order-phone" data-check="ajax/phone-check.json">
+                                    <div class="order-phone-has">Пользователь с&nbsp;данными номером телефона зарегистрирован на&nbsp;сайте.<br> <a href="#">Авторизоваться</a> для сохранения баллов и&nbsp;скидок?</div>
+                                </div>
+                                <div class="form-select form-select-ajax-city" data-link="ajax/cities.json">
+                                    <select name="city" data-placeholder="Населенный пункт" class="required" id="order-city">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="order-delivery">
+                                    <h3>Способ доставки</h3>
+
+                                    <div class="order-delivery-list">
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="1" data-price="0" data-title="Бесплатно" id="delivery-self" checked>
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">Самовывоз</div>
+                                                <div class="order-delivery-item-text">Вы&nbsp;можете примерить покупки и&nbsp;купить только&nbsp;то, что подойдет.</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>Бесплатно</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="2" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">Обычная МСК и МО</div>
+                                                <div class="order-delivery-item-text">Вы&nbsp;можете примерить покупки и&nbsp;купить только&nbsp;то, что понравится. Эта опция доступна при оплате курьеру.</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="3" data-price="365" data-title="365 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">Экспресс МСК</div>
+                                                <div class="order-delivery-item-text">Интервал доставки по&nbsp;Москве и&nbsp;Московской области&nbsp;&mdash; с&nbsp;9&nbsp;до&nbsp;21&nbsp;часов. Если вы&nbsp;живете в&nbsp;Москве в&nbsp;пределах МКАД, вы&nbsp;сможете выбрать удобный день и&nbsp;время доставки&nbsp;&mdash; ссылку пришлем в&nbsp;СМС после оформления заказа</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>365 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="4" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">ПВЗ МСК</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="5" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">ПВЗ BOXBERRY</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="6" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">ПВЗ СДЭК</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="7" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">Курьерская СДЭК</div>
+                                                <div class="order-delivery-item-text">Вы&nbsp;можете примерить покупки и&nbsp;купить только&nbsp;то, что подойдет.</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-delivery-item">
+                                            <input type="radio" name="delivery" value="8" data-price="300" data-title="300 Р">
+                                            <div class="order-delivery-item-inner">
+                                                <div class="order-delivery-item-title">5POST</div>
+                                                <div class="order-delivery-item-price"><span>Стоимость доставки - </span>300 Р</div>
+                                                <div class="order-delivery-item-period"><span>Сроки доставки - </span>1-2 рабочих дня</div>
+                                            </div>
+                                        </label>
                                     </div>
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Квартира/офис</span><input type="text" name="flat" value=""></div>
+
+                                    <div class="order-delivery-detail">
+                                        <div class="form-input"><span>Улица</span><input type="text" name="street" value=""></div>
+                                        <div class="order-fields-row">
+                                            <div class="order-fields-row-item">
+                                                <div class="form-input"><span>Дом</span><input type="text" name="build" value=""></div>
+                                            </div>
+                                            <div class="order-fields-row-item">
+                                                <div class="form-input"><span>Квартира/офис</span><input type="text" name="flat" value=""></div>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="order-payment">
+                                    <h3>Способ оплаты</h3>
+
+                                    <div class="order-payment-list">
+                                        <label class="order-payment-item">
+                                            <input type="radio" name="payment" value="1" checked>
+                                            <div class="order-payment-item-inner">
+                                                <div class="order-payment-item-title">Банковской картой</div>
+                                                <div class="order-payment-item-text">Пожалуйста, оплатите заказ в&nbsp;течение 120&nbsp;минут.<br> При оплате онлайн недоступна опция примерки и&nbsp;частичного выкупа.<br> При получении предоплаченного заказа нужно будет предъявить паспорт на&nbsp;фамилию и&nbsp;имя оформителя заказа и&nbsp;расписаться</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-payment-item">
+                                            <input type="radio" name="payment" value="2">
+                                            <div class="order-payment-item-inner">
+                                                <div class="order-payment-item-title">Наличными при получении</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-payment-item">
+                                            <input type="radio" name="payment" value="3">
+                                            <div class="order-payment-item-inner">
+                                                <div class="order-payment-item-title">Банковской картой при получении</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="order-payment-item">
+                                            <input type="radio" name="payment" value="4">
+                                            <div class="order-payment-item-inner">
+                                                <div class="order-payment-item-title">ЮКасса</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="order-comment">
+                                    <div class="form-input"><span>Комментарий для курьера</span><textarea name="comment" rows="5" cols="10"></textarea></div>
                                 </div>
                             </div>
 
@@ -598,19 +735,30 @@
                                 <div class="cart-side-inner">
                                     <div class="cart-side-row">
                                         <div class="cart-side-row-title">Сумма</div>
-                                        <div class="cart-side-row-value">4 400 ₽</div>
+                                        <div class="cart-side-row-value"><span id="cart-side-cost">4 400</span> ₽</div>
                                     </div>
                                     <div class="cart-side-row">
                                         <div class="cart-side-row-title">Доставка</div>
-                                        <div class="cart-side-row-value">390 ₽</div>
+                                        <div class="cart-side-row-value"><span id="cart-side-delivery">0 ₽</span></div>
+                                    </div>
+                                    <div class="cart-side-row cart-side-row-discount">
+                                        <div class="cart-side-row-title">Промокод</div>
+                                        <div class="cart-side-row-value"><span id="cart-side-discount">0</span> ₽</div>
                                     </div>
                                     <div class="cart-side-row cart-side-row-summ">
                                         <div class="cart-side-row-title">Итог</div>
-                                        <div class="cart-side-row-value">9 390 ₽</div>
+                                        <div class="cart-side-row-value"><span id="cart-side-summ">0</span> ₽</div>
                                     </div>
-                                    <div class="cart-side-btn"><a href="#" class="btn">оформить</a></div>
+                                    <div class="cart-side-btn"><button type="submit" class="btn">оформить заказ</button></div>
+                                    <div class="cart-side-promo">
+                                        <div class="cart-side-promo-link"><a href="#">Ввести промокод</a></div>
+                                        <div class="cart-side-promo-form">
+                                            <div class="form-input"><span>Промокод</span><input type="text" name="promo" value="" data-error="Необходимо ввести промокод"></div>
+                                            <a href="ajax/promo-success.json" class="cart-side-promo-send"><svg><use xlink:href="images/sprite.svg#promo-send"></use></svg></a>
+                                            <a href="ajax/promo-reset.json" class="cart-side-promo-reset"><svg><use xlink:href="images/sprite.svg#promo-reset"></use></svg></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="cart-side-notice">Нажимая на кнопку «оплатить заказ»,<br> я&nbsp;принимаю условия <a href="#">публичной оферты</a><br> и&nbsp;<a href="#">политики конфиденциальности</a></div>
                             </div>
                         </form>
 
@@ -733,6 +881,7 @@
         <script src="js/select2/ru.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/air-datepicker/air-datepicker.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

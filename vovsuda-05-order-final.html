@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -210,59 +211,174 @@
                 <!-- container -->
                 <div class="container">
 
-                    <!-- order -->
-                    <div class="order">
+                    <!-- order final -->
+                    <div class="order-final">
 
-                        <h2><a href="#" class="order-back-link"><svg><use xlink:href="images/sprite.svg#order-back-link"></use></svg></a>Оформление заказа</h2>
+                        <h2>Оформление заказа</h2>
 
-                        <form action="#" method="post" class="order-container">
-                            <div class="order-fields">
-                                <div class="form-submit"><a href="#" class="btn-border">Войти в личный кабинет</a></div>
-                                <div class="form-input"><span>Email<em>*</em></span><input type="email" name="email" value="" class="required email"></div>
-                                <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="" class="required"></div>
-                                <div class="form-input"><span>Фамилия<em>*</em></span><input type="text" name="lastname" value="" class="required"></div>
-                                <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="" class="required phoneRU"></div>
-                                <div class="form-input"><span>Населенный пункт</span><input type="text" name="city" value=""></div>
-                                <div class="form-input"><span>Улица</span><input type="text" name="street" value=""></div>
-                                <div class="order-fields-row">
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Дом</span><input type="text" name="build" value=""></div>
-                                    </div>
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Квартира/офис</span><input type="text" name="flat" value=""></div>
-                                    </div>
+                        <div class="order-final-info">
+                            <div class="order-final-info-status"><svg><use xlink:href="images/sprite.svg#order-final-info-status"></use></svg>Заказ оформлен</div>
+                            <div class="order-final-info-number">Номер заказа: 1382</div>
+                        </div>
+
+                        <!-- order final data -->
+                        <div class="order-final-data">
+                            <div class="order-final-data-title">Данные заказа</div>
+                            <div class="order-final-data-list">
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Email</div>
+                                    <div class="order-final-data-item-value">Email@gmail.com</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Имя</div>
+                                    <div class="order-final-data-item-value">Имя</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Фамилия</div>
+                                    <div class="order-final-data-item-value">Фамилия</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Телефон</div>
+                                    <div class="order-final-data-item-value">+7 (999) 123-45-78</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Населенный пункт</div>
+                                    <div class="order-final-data-item-value">Москва, ул. Ленина, дом 3, квартира 12</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Способ доставки</div>
+                                    <div class="order-final-data-item-value">Обычная МСК и&nbsp;МО<br> Вы&nbsp;можете примерить покупки и&nbsp;купить только&nbsp;то, что понравится. Эта опция доступна при оплате курьеру.</div>
+                                </div>
+                                <div class="order-final-data-item">
+                                    <div class="order-final-data-item-title">Способ оплаты</div>
+                                    <div class="order-final-data-item-value">Банковской картой</div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- order final data END -->
 
+                        <!-- order final cart -->
+                        <div class="order-final-cart">
+                            <div class="cart-headers">
+                                <div class="cart-header">Товар</div>
+                                <div class="cart-header">Цвет</div>
+                                <div class="cart-header">Размер</div>
+                                <div class="cart-header">Количество</div>
+                                <div class="cart-header">Цена</div>
+                            </div>
+
+                            <!-- cart item -->
+                            <div class="cart-item">
+                                <div class="cart-item-product">
+                                    <div class="cart-item-product-preview"><img src="files/cart-item-1.jpg" alt=""></div>
+                                    <div class="cart-item-product-content">
+                                        <div class="cart-item-product-title">Брюки из мерсеризованного хлопка рубашка из хлопка и шелка</div>
+                                        <div class="cart-item-product-art">43-114-224-620</div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-color">
+                                    <div class="cart-item-select">
+                                        <div class="cart-item-select-title"><span><em style="background:#B89F86; border-color:#B89F86"></em>Бежевый</span></div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-size">XS</div>
+                                <div class="cart-item-count"><span>Количество:</span>2</div>
+                                <div class="cart-item-price">7 980 ₽</div>
+                            </div>
+                            <!-- cart item END -->
+
+                            <!-- cart item -->
+                            <div class="cart-item">
+                                <div class="cart-item-product">
+                                    <div class="cart-item-product-preview"><img src="files/cart-item-2.jpg" alt=""></div>
+                                    <div class="cart-item-product-content">
+                                        <div class="cart-item-product-title">Рубашка из хлопка и шелка</div>
+                                        <div class="cart-item-product-art">43-114-224-620</div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-color">
+                                    <div class="cart-item-select">
+                                        <div class="cart-item-select-title"><span><em style="background:#9BD8EB; border-color:#9BD8EB"></em>Голубой</span></div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-size">XS</div>
+                                <div class="cart-item-count"><span>Количество:</span>2</div>
+                                <div class="cart-item-price">7 980 ₽</div>
+                            </div>
+                            <!-- cart item END -->
+
+                            <!-- cart item -->
+                            <div class="cart-item">
+                                <div class="cart-item-product">
+                                    <div class="cart-item-product-preview"><img src="files/cart-item-3.jpg" alt=""></div>
+                                    <div class="cart-item-product-content">
+                                        <div class="cart-item-product-title">Топ-бра из хлопка и шелка</div>
+                                        <div class="cart-item-product-art">43-114-224-620</div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-color">
+                                    <div class="cart-item-select">
+                                        <div class="cart-item-select-title"><span><em style="background:#B89F86; border-color:#B89F86"></em>Бежевый</span></div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-size">XS</div>
+                                <div class="cart-item-count"><span>Количество:</span>2</div>
+                                <div class="cart-item-price">7 980 ₽</div>
+                            </div>
+                            <!-- cart item END -->
+
+                            <!-- cart item -->
+                            <div class="cart-item">
+                                <div class="cart-item-product">
+                                    <div class="cart-item-product-preview"><img src="files/cart-item-4.jpg" alt=""></div>
+                                    <div class="cart-item-product-content">
+                                        <div class="cart-item-product-title">Брюки из мерсеризованного хлопка рубашка из хлопка и шелка</div>
+                                        <div class="cart-item-product-art">43-114-224-620</div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-color">
+                                    <div class="cart-item-select">
+                                        <div class="cart-item-select-title"><span><em style="background:#D1233E; border-color:#D1233E"></em>Красный</span></div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-size">XS</div>
+                                <div class="cart-item-count"><span>Количество:</span>2</div>
+                                <div class="cart-item-price">7 980 ₽</div>
+                            </div>
+                            <!-- cart item END -->
+                        </div>
+                        <!-- order final cart END -->
+
+                        <!-- order final side -->
+                        <div class="order-final-side">
                             <div class="cart-side">
                                 <div class="cart-side-inner">
                                     <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Брюки из мерсеризованного хлопка рубашка из хлопка</div>
-                                        <div class="cart-side-row-value">1 980 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Рубашка из хлопка и шелка</div>
-                                        <div class="cart-side-row-value">344 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Топ-бра из хлопка и шелка</div>
+                                        <div class="cart-side-row-title">Сумма</div>
                                         <div class="cart-side-row-value">4 400 ₽</div>
                                     </div>
                                     <div class="cart-side-row">
                                         <div class="cart-side-row-title">Доставка</div>
                                         <div class="cart-side-row-value">390 ₽</div>
                                     </div>
+                                    <div class="cart-side-row">
+                                        <div class="cart-side-row-title">Промокод</div>
+                                        <div class="cart-side-row-value">-390 ₽</div>
+                                    </div>
                                     <div class="cart-side-row cart-side-row-summ">
                                         <div class="cart-side-row-title">Итог</div>
                                         <div class="cart-side-row-value">9 390 ₽</div>
                                     </div>
-                                    <div class="cart-side-btn"><button type="submit" class="btn">оформить</button></div>
+                                    <div class="cart-side-btn"><a href="#" class="btn">Оплатить</a></div>
+                                    <div class="cart-side-notice">Услуги предоставляет сервис онлайн-платежей &laquo;ЮKаssа&raquo;</div>
+                                    <div class="cart-side-notice">Вы&nbsp;будете перенаправлены на&nbsp;страницу оплаты.<br> <span>Обратите внимание:</span> если вы&nbsp;откажетесь от&nbsp;покупки, для возврата денег вам придется обратиться в&nbsp;магазин.</div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <!-- order final side END -->
 
                     </div>
-                    <!-- order END -->
+                    <!-- order final END -->
 
                 </div>
                 <!-- container END -->
@@ -380,6 +496,7 @@
         <script src="js/select2/ru.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/air-datepicker/air-datepicker.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

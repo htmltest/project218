@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -235,7 +236,7 @@
                             <div class="cabinet-profile">
                                 <h3>Личные данные</h3>
                                 <form action="#" method="post">
-                                    <div class="form-input"><span>Телефон</span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU"></div>
+                                    <div class="form-input"><span>Телефон</span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU" disabled></div>
                                     <div class="form-input"><span>Электронная почта</span><input type="email" name="email" value="Email@gmail.com" class="required email"></div>
                                     <div class="cabinet-profile-row">
                                         <div class="cabinet-profile-row-field">
@@ -245,7 +246,7 @@
                                             <div class="form-input"><span>Фамилия</span><input type="text" name="lastname" value="Борисов" class="required"></div>
                                         </div>
                                     </div>
-                                    <div class="form-input"><span>Дата рождения</span><input type="text" name="birthday" value=""></div>
+                                    <div class="form-input form-input-date"><span>Дата рождения</span><input type="text" name="birthday" value=""></div>
                                     <div class="cabinet-profile-row">
                                         <div class="cabinet-profile-row-field">
                                             <div class="form-select">
@@ -274,7 +275,7 @@
                                 </form>
                                 <div class="cabinet-profile-password">
                                     <div class="cabinet-profile-password-title"><a href="#">Изменить пароль</a></div>
-                                    <form action="#" method="post">
+                                    <form action="ajax/success.json" method="post" class="ajax-form">
                                         <div class="form-input"><span>Пароль</span><input type="password" name="password" class="required" id="password"></div>
                                         <div class="form-input"><span>Пароль</span><input type="password" name="repassword" class="required" equalTo="#password"></div>
                                         <div class="cabinet-profile-password-submit"><input type="submit" value="Изменить пароль" class="btn-border"></div>
@@ -405,6 +406,7 @@
         <script src="js/select2/ru.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/air-datepicker/air-datepicker.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

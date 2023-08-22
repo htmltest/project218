@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -215,25 +216,27 @@
 
                         <!-- catalogue side -->
                         <div class="catalogue-side">
-                            <div class="breadcrumbs"><a href="#">Вовсюда</a><span>/</span>Каталог</div>
-                            <div class="catalogue-side-title">Рубашки<br> и&nbsp;блузки</div>
-                            <div class="catalogue-side-menu">
-                                <ul>
-                                    <li><a href="#">Все товары</a></li>
-                                    <li><a href="#">Верхняя одежда</a></li>
-                                    <li><a href="#">Жакеты</a></li>
-                                    <li><a href="#">Платья</a></li>
-                                    <li><a href="#">Брюки</a></li>
-                                    <li><a href="#">Шорты</a></li>
-                                    <li><a href="#">Юбки</a></li>
-                                    <li><a href="#">Платья</a></li>
-                                    <li><a href="#">Аксессуары</a></li>
-                                    <li><a href="#">Трикотаж</a></li>
-                                    <li class="active"><a href="#">Рубашки и Блузки</a></li>
-                                    <li><a href="#">Топы</a></li>
-                                </ul>
+                            <div class="catalogue-side-inner">
+                                <div class="breadcrumbs"><a href="#">Вовсюда</a><span>/</span>Каталог</div>
+                                <div class="catalogue-side-title">Рубашки и&nbsp;блузки</div>
+                                <div class="catalogue-side-menu">
+                                    <ul>
+                                        <li><a href="#">Все товары</a></li>
+                                        <li><a href="#">Верхняя одежда</a></li>
+                                        <li><a href="#">Жакеты</a></li>
+                                        <li><a href="#">Платья</a></li>
+                                        <li><a href="#">Брюки</a></li>
+                                        <li><a href="#">Шорты</a></li>
+                                        <li><a href="#">Юбки</a></li>
+                                        <li><a href="#">Платья</a></li>
+                                        <li><a href="#">Аксессуары</a></li>
+                                        <li><a href="#">Трикотаж</a></li>
+                                        <li class="active"><a href="#">Рубашки и Блузки</a></li>
+                                        <li><a href="#">Топы</a></li>
+                                    </ul>
+                                </div>
+                                <div class="catalogue-filter-mobile-link"><a href="#">Фильтры<span>0</span><svg><use xlink:href="images/sprite.svg#catalogue-filter"></use></svg></a></div>
                             </div>
-                            <div class="catalogue-filter-mobile-link"><a href="#">Фильтры<span>0</span><svg><use xlink:href="images/sprite.svg#catalogue-filter"></use></svg></a></div>
                         </div>
                         <!-- catalogue side END -->
 
@@ -258,6 +261,7 @@
                                         </div>
                                     </div>
                                     <div class="catalogue-filter">
+                                        <input type="hidden" name="section" value="" />
                                         <div class="catalogue-filter-item">
                                             <div class="catalogue-filter-item-title">Повод<span>0</span><svg><use xlink:href="images/sprite.svg#catalogue-filter-arrow"></use></svg><a href="#" class="catalogue-filter-item-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-remove"></use></svg></a></div>
                                             <div class="catalogue-filter-item-content">
@@ -344,6 +348,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="#" class="catalogue-filter-reset"><svg><use xlink:href="images/sprite.svg#catalogue-filter-reset"></use></svg></a>
                                     </div>
                                     <div class="catalogue-ctrl-bottom">
                                         <div class="catalogue-ctrl-submit"><a href="#" class="btn">Смотреть <span>144</span></a></div>
@@ -379,7 +384,7 @@
                                     <div class="catalogue-item-inner">
                                         <a href="#" class="catalogue-item-content">
                                             <div class="catalogue-item-preview">
-                                                <svg><use xlink:href="images/sprite.svg#logo-back"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
                                             </div>
                                             <div class="catalogue-item-title">Брюки из мерсеризованного хлопка</div>
                                             <div class="catalogue-item-price">7 980 ₽</div>
@@ -820,6 +825,7 @@
         <script src="js/select2/ru.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/air-datepicker/air-datepicker.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

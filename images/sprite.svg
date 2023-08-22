@@ -215,4 +215,21 @@
         <path d="M10.9005 0L7.91403 17.0742H12.3937V34H0V17.0742L4.47964 0H10.9005ZM31.5068 0L28.5204 17.0742H33V34H20.6063V17.0742L25.086 0H31.5068Z" />
     </symbol>
 
+    <symbol viewBox="0 0 24 25" id="order-final-info-status">
+        <path d="M20 6.5L9 17.5L4 12.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 32 32" id="promo-send">
+        <path d="M12 23L20 16L12 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 32 32" id="promo-reset">
+        <path d="M10 22L16 16M16 16L10 10M16 16L22 10M16 16L22 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="catalogue-filter-reset">
+        <path d="M15.7124 8.28769L8.28778 15.7123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.2876 8.28769L15.7122 15.7123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>

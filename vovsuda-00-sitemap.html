@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -210,58 +211,64 @@
                 <!-- container -->
                 <div class="container">
 
-                    <!-- order -->
-                    <div class="order">
+                    <h2>Карта сайта</h2>
 
-                        <h2><a href="#" class="order-back-link"><svg><use xlink:href="images/sprite.svg#order-back-link"></use></svg></a>Оформление заказа</h2>
+                    <!-- sitemap -->
+                    <div class="sitemap">
+                        <div class="sitemap-container">
+                            <ul>
+                                <li>
+                                    <a href="#">Каталог</a>
+                                    <ul>
+                                        <li><a href="#">Верхняя одежда</a></li>
+                                        <li><a href="#">Жакеты</a></li>
+                                        <li><a href="#">Платья</a></li>
+                                        <li><a href="#">Брюки</a></li>
+                                        <li><a href="#">Шорты</a></li>
+                                        <li><a href="#">Юбки</a></li>
+                                        <li><a href="#">Платья</a></li>
+                                        <li><a href="#">Аксессуары</a></li>
+                                        <li><a href="#">Трикотаж</a></li>
+                                        <li><a href="#">Рубашки и Блузки</a></li>
+                                        <li><a href="#">Топы</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Новинки</a></li>
+                                <li><a href="#">Коллекции</a></li>
+                                <li>
+                                    <a href="#">Покупателям</a>
+                                    <ul>
+                                        <li><a href="#">Доставка и оплата</a></li>
+                                        <li><a href="#">Программа лояльности</a></li>
+                                        <li><a href="#">Возврат товара</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Стилистам</a></li>
+                                <li><a href="#">О бренде</a></li>
+                                <li><a href="#">Избранное</a></li>
+                                <li><a href="#">Корзина</a></li>
+                                <li><a href="#">Личный кабинет</a></li>
+                                <li><a href="#">Политика обработки персональных данных</a></li>
+                                <li><a href="#">Пользовательское соглашение</a></li>
+                                <li><a href="#">Политика конфиденциальности</a></li>
+                            </ul>
+                        </div>
 
-                        <form action="#" method="post" class="order-container">
-                            <div class="order-fields">
-                                <div class="form-input"><span>Email<em>*</em></span><input type="email" name="email" value="Email@gmail.com" class="required email"></div>
-                                <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="Имя" class="required"></div>
-                                <div class="form-input"><span>Фамилия<em>*</em></span><input type="text" name="lastname" value="Фамилия" class="required"></div>
-                                <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="+7 (999) 123-45-78" class="required phoneRU"></div>
-                                <div class="form-input"><span>Населенный пункт</span><input type="text" name="city" value=""></div>
-                                <div class="form-input"><span>Улица</span><input type="text" name="street" value=""></div>
-                                <div class="order-fields-row">
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Дом</span><input type="text" name="build" value=""></div>
-                                    </div>
-                                    <div class="order-fields-row-item">
-                                        <div class="form-input"><span>Квартира/офис</span><input type="text" name="flat" value=""></div>
-                                    </div>
-                                </div>
+                        <div class="sitemap-side">
+                            <div class="sitemap-side-title">Телефон</div>
+                            <div class="sitemap-side-value"><a href="tel:+78006001536">8 800 600-15-36</a></div>
+                            <div class="sitemap-side-title">Почта</div>
+                            <div class="sitemap-side-value"><a href="mailto:info@vovsuda.com">info@vovsuda.com</a></div>
+                            <div class="sitemap-side-title">Социальные сети</div>
+                            <div class="sitemap-side-social">
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-tg"></use></svg></a>
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-yt"></use></svg></a>
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-vk"></use></svg></a>
                             </div>
-
-                            <div class="cart-side">
-                                <div class="cart-side-inner">
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Брюки из мерсеризованного хлопка рубашка из хлопка</div>
-                                        <div class="cart-side-row-value">1 980 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Рубашка из хлопка и шелка</div>
-                                        <div class="cart-side-row-value">344 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Топ-бра из хлопка и шелка</div>
-                                        <div class="cart-side-row-value">4 400 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row">
-                                        <div class="cart-side-row-title">Доставка</div>
-                                        <div class="cart-side-row-value">390 ₽</div>
-                                    </div>
-                                    <div class="cart-side-row cart-side-row-summ">
-                                        <div class="cart-side-row-title">Итог</div>
-                                        <div class="cart-side-row-value">9 390 ₽</div>
-                                    </div>
-                                    <div class="cart-side-btn"><button type="submit" class="btn">оформить</button></div>
-                                </div>
-                            </div>
-                        </form>
-
+                        </div>
                     </div>
-                    <!-- order END -->
+                    <!-- sitemap END -->
 
                 </div>
                 <!-- container END -->
@@ -379,6 +386,7 @@
         <script src="js/select2/ru.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/air-datepicker/air-datepicker.js"></script>
         <script src="js/tools.js"></script>
 
     </body>
