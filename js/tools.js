@@ -682,7 +682,7 @@ $(document).ready(function() {
     });
 
     $('body').on('click', '.collection-detail-item-link', function(e) {
-        $(this).parent().parent().toggleClass('open');
+        $(this).parents().filter('.collection-detail-item').toggleClass('open');
         e.preventDefault();
     });
 
