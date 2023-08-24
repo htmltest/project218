@@ -668,10 +668,10 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
     .slider .slick-dots li button {width:100%}
 }
 
-.main-about {padding:100px; background:#EBEBEA}
+.main-about {padding:100px 26px; background:#EBEBEA}
 .main-about .container {display:flex}
 .main-about-logo {min-width:50%}
-.main-about-logo svg {display:block; width:494px; height:429px; fill:#FFFFFF}
+.main-about-logo svg {display:block; width:450px; height:391px; fill:#FFFFFF}
 .main-about-text {min-width:50%; display:flex; flex-direction:column; padding:0 0 0 6px}
 .main-about-title {height:100%; font-weight:500; font-size:36px; line-height:43px; letter-spacing:-0.03em; text-transform:uppercase; position:relative}
 .main-about-title strong {font-weight:600}
@@ -1694,6 +1694,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg), pointer};
     .collections {margin:32px -15px}
     .collections-item {padding:80px 15px 0 15px}
     .collections-item:nth-child(odd) {padding-top:346px}
+    .collections-item:nth-child(1) {padding-top:0}
 }
 
 @media (max-width:1231px) {
@@ -2495,7 +2496,7 @@ footer a {color:#FFFFFF; text-decoration:none}
     .stylist-variant:first-child {margin:0}
     .stylist-variant-inner+.stylist-variant-inner {margin:24px 0 0 0}
     .stylist-variant-inner-big {font-size:14px; line-height:21px}
-    .stylist-variant-photo {min-height:236px; max-width:353px}
+    .stylist-variant-photo {min-height:236px}
 }
 
 .cabinet-profile {margin:0 104px 0 80px; padding:0 0 72px 0; position:relative; max-width:713px}
