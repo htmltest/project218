@@ -1121,7 +1121,6 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 .catalogue-item-preview-dots {position:absolute; right:8px; bottom:8px; display:flex}
 .catalogue-item-preview-dot {min-width:6px; max-width:6px; height:6px; background:#FFFFFF; border-radius:50%; margin:0 0 0 8px}
 .catalogue-item-preview-dot.active {background:#6B645C}
-.catalogue-item-preview svg {position:absolute; left:50%; top:50%; max-width:100%; width:266px; height:31px; fill:#E3E2DE; transform:translate(-50%, -50%)}
 .catalogue-item-title {margin:10px 0 0 0; font-weight:500; font-size:13px; line-height:20px; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
 .catalogue-item-price {font-weight:500; font-size:13px; line-height:20px; color:#6B645C}
 .catalogue-item-nameplates {position:absolute; left:6px; top:6px; right:10px; display:flex; flex-wrap:wrap; font-weight:500; font-size:11px; line-height:17px; text-transform:uppercase; color:#18171F}
@@ -1156,7 +1155,6 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
     .catalogue-container .catalogue-item:nth-child(5n) {width:100%}
     .catalogue-container .catalogue-item:nth-child(18n-14) .catalogue-item-preview {padding:132% 0 0 0}
     .catalogue-container .catalogue-item:nth-child(18n-4) .catalogue-item-preview {padding:132% 0 0 0}
-    .catalogue-item-preview svg {width:150px; height:18px}
     .catalogue-item-buy {font-size:11px; line-height:14px; margin:8px 0 0 0}
     .catalogue-item-buy svg {display:none}
 }
