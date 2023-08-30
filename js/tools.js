@@ -257,7 +257,9 @@ $(document).ready(function() {
         var curTitle = $(this);
         var curBlock = curTitle.parent();
         curBlock.toggleClass('open');
-        curBlock.find('.card-info-block-container').slideToggle();
+        curBlock.find('.card-info-block-container').slideToggle(function() {
+            $(window).trigger('resize');
+        });
         e.preventDefault();
     });
 
@@ -1071,6 +1073,14 @@ $(document).ready(function() {
         }
     });
 
+    $('.card-info').stickySidebar({
+        topSpacing: 68,
+        bottomSpacing: 20,
+        containerSelector: '.card',
+        innerWrapperSelector: '.card-info-inner',
+        minWidth: 1232
+    });
+
 });
 
 function initForm(curForm) {
@@ -1451,6 +1461,14 @@ function initCataloguePreview() {
     });
 }
 
+$(window).on('load', function() {
+    $('body').append('<div id="body-test-height" style="position:fixed; left:0; top:0; right:0; bottom:0; z-index:-1"></div>');
+    var windowHeight = $('#body-test-height').height();
+    $('#body-test-height').remove();
+
+    $('.slider-item-inner').css({'height': (windowHeight - 40) + 'px'});
+});
+
 $(window).on('load resize', function() {
 
     $('.card-media-list').each(function() {
@@ -1479,6 +1497,7 @@ $(window).on('load resize', function() {
 
 $(window).on('load resize scroll', function() {
     var windowScroll = $(window).scrollTop();
+
     $('body').append('<div id="body-test-height" style="position:fixed; left:0; top:0; right:0; bottom:0; z-index:-1"></div>');
     var windowHeight = $('#body-test-height').height();
     $('#body-test-height').remove();
@@ -1529,20 +1548,6 @@ $(window).on('load resize scroll', function() {
         }
     });
 
-    $('.card-info').each(function() {
-        $('.card-info').css({'height': $('.card-info-inner').outerHeight()});
-        if (windowScroll + windowHeight - 20 >= $('.card-info').offset().top + $('.card-info').outerHeight()) {
-            $('.card-info').addClass('fixed');
-            if (windowScroll + windowHeight >= $('.card').offset().top + $('.card').outerHeight()) {
-                $('.card-info-inner').css({'bottom': ((windowScroll + windowHeight) - ($('.card').offset().top + $('.card').outerHeight()) + 20) + 'px'});
-            } else {
-                $('.card-info-inner').css({'bottom': '20px'});
-            }
-        } else {
-            $('.card-info').removeClass('fixed');
-            $('.card-info-inner').css({'bottom': 'auto'});
-        }
-    });
 });
 
 function updateSMSTimer() {

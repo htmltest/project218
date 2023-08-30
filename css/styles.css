@@ -625,6 +625,9 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 .slider {position:relative; display:flex; width:100%; overflow:hidden}
 .slider-item {min-width:100%}
 .slider-item-inner {display:flex; height:100vh; position:relative; align-items:flex-end; justify-content:center; padding:0 0 72px 0}
+@media (min-width:1232px) {
+    .slider-item-inner {height:100vh !important}
+}
 .slider-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
 .slider-item-menu {position:absolute; left:0; top:70px; right:0; font-size:14px; line-height:21px}
 .slider-item-menu ul {margin:0; padding:0; list-style:none}
@@ -747,7 +750,7 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 .main-collection.inverse .main-collection-period {color:#FFFFFF}
 .main-collection.grey .main-collection-period {color:#6B645C}
 .main-collection-content {position:relative; text-align:center; padding:0 0 60px 0}
-.main-collection-title {font-weight:500; font-size:96px; line-height:96px; letter-spacing:-0.04em; text-transform:uppercase; color:#18171F}
+.main-collection-title {font-weight:500; font-size:50px; line-height:50px; letter-spacing:-0.04em; text-transform:uppercase; color:#18171F}
 .main-collection.inverse .main-collection-title {color:#FFFFFF}
 .main-collection.grey .main-collection-title {color:#6B645C}
 .main-collection-btn {margin:30px 0 0 0}
@@ -758,7 +761,7 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
     .main-collection-logo svg {width:34px; height:29px}
     .main-collection-period {font-weight:500; font-size:11px; line-height:14px}
     .main-collection-content {padding:0 12px 24px 12px; width:100%}
-    .main-collection-title {font-size:24px; line-height:26px; letter-spacing:-0.03em}
+    .main-collection-title {font-size:18px; line-height:27px; letter-spacing:-0.03em}
     .main-collection-btn {margin:20px 0 0 0}
     .main-collection-btn a {width:100%}
 }
@@ -1147,6 +1150,8 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
     .catalogue-container .catalogue-item:nth-child(18n-14) {height:72vw; min-height:100%}
     .catalogue-container .catalogue-item:nth-child(18n-4) {grid-column:span 2; grid-row:span 2}
     .catalogue-container .catalogue-item:nth-child(18n-4) {height:72vw; min-height:100%}
+    .catalogue-container .catalogue-item-title {min-height:20px}
+    .catalogue-container .catalogue-item-price {min-height:20px}
 }
 
 @media (max-width:1231px) {
@@ -1206,9 +1211,6 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 
 .card-info {min-width:573px; max-width:573px}
 .card-info-inner {width:573px; padding:0 61px 0 56px}
-@media (min-width:1232px) {
-    .card-info.fixed .card-info-inner {position:fixed}
-}
 .card-info .breadcrumbs {margin:0}
 .card-info-nameplates {margin:12px 0 0 -4px; display:flex; flex-wrap:wrap; font-weight:500; font-size:11px; line-height:17px; text-transform:uppercase; color:#18171F}
 .card-info-nameplates span {display:block; margin:4px 0 0 4px; white-space:nowrap; padding:0 4px; height:16px; border-radius:4px; background:#F5F5F5}
@@ -1280,7 +1282,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 
 @media (max-width:1231px) {
     .card-info {min-width:0; max-width:none; margin:40px 0 0 0}
-    .card-info-inner {width:auto; padding:0; bottom:auto !important}
+    .card-info-inner {width:auto; padding:0}
     .card-info-price {display:block}
     .card-info-price span {display:block; margin:8px 0 0 0; padding:0; height:auto; line-height:17px; color:#6B645C; background:none; border-radius:0}
 }
@@ -1724,7 +1726,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .collections-item {padding:30px 6px 0 6px}
     .collections-item:nth-child(odd) {padding-top:30px}
     .collections-item:nth-child(1) {padding-top:0}
-    .collections-item-title {right:0; left:0; bottom:20px; font-size:20px; line-height:22px; letter-spacing:-0.01em}
+    .collections-item-title {right:0; left:0; bottom:20px; font-size:18px; line-height:27px; letter-spacing:-0.01em}
 }
 
 .collection-header {position:relative}
