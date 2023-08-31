@@ -1177,6 +1177,10 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 .catalogue-empty-title {font-size:14px; line-height:21px; color:#6B645C}
 .catalogue-empty-btn {margin:24px 0 0 0}
 
+@media (min-width:1232px) {
+    .catalogue-container .catalogue-empty {grid-column:span 3}
+}
+
 .card {margin:40px 0 140px 0; display:flex}
 
 @media (max-width:1231px) {
@@ -2775,4 +2779,11 @@ footer a {color:#FFFFFF; text-decoration:none}
 .order-phone-has a {color:#18171F; text-decoration:underline}
 @media (min-width:1232px) {
     .order-phone-has a:hover {text-decoration:none}
+}
+
+.cabinet-container .catalogue-empty {margin:0; padding:54px 20px}
+.cabinet-container .catalogue-empty-btn .btn-border {padding:9px 15px}
+
+@media (max-width:1231px) {
+    .cabinet-container .catalogue-empty-btn .btn-border {padding:9px 23px}
 }
