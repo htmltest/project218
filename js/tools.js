@@ -100,45 +100,37 @@ $(document).ready(function() {
     });
 
     $('.gallery').each(function() {
-        var curGallery = $(this);
-        curGallery.on('init', function(event, slick) {
-            var curSlide = curGallery.find('.slick-current');
-            var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
-            curGallery.find('.slick-dots').css({'top': curPhotoHeight});
-            curGallery.find('.slick-prev').css({'top': curPhotoHeight / 2});
-            curGallery.find('.slick-next').css({'top': curPhotoHeight / 2});
-        });
-        var options = {
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
-            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-            adaptiveHeight: true,
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 1231,
-                    settings: {
-                        arrows: false
-                    }
+        var curSlider = $(this);
+        curSlider.wrapInner('<div class="swiper-wrapper"></div>');
+        curSlider.find('.gallery-item').addClass('swiper-slide');
+        curSlider.append('<div class="swiper-pagination"></div><div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></div><div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></div>');
+        const swiper = new Swiper(curSlider[0], {
+            loop: true,
+            touchAngle: 30,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            on: {
+                afterInit: function () {
+                    var curSlide = curSlider.find('.swiper-slide-active');
+                    var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
+                    curSlider.find('.swiper-pagination').css({'top': curPhotoHeight});
+                    curSlider.find('.swiper-button-prev').css({'top': curPhotoHeight / 2});
+                    curSlider.find('.swiper-button-next').css({'top': curPhotoHeight / 2});
+                },
+                slideChangeTransitionEnd: function () {
+                    var curSlide = curSlider.find('.swiper-slide-active');
+                    var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
+                    curSlider.find('.swiper-pagination').css({'top': curPhotoHeight});
+                    curSlider.find('.swiper-button-prev').css({'top': curPhotoHeight / 2});
+                    curSlider.find('.swiper-button-next').css({'top': curPhotoHeight / 2});
                 }
-            ]
-        };
-        curGallery.slick(
-            options
-        ).on('setPosition', function(event, slick) {
-            var curSlide = curGallery.find('.slick-current');
-            var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
-            curGallery.find('.slick-dots').css({'top': curPhotoHeight});
-            curGallery.find('.slick-prev').css({'top': curPhotoHeight / 2});
-            curGallery.find('.slick-next').css({'top': curPhotoHeight / 2});
-        }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            var curSlide = curGallery.find('.slick-slide:not(.slick-cloned)').eq(nextSlide);
-            var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
-            curGallery.find('.slick-dots').css({'top': curPhotoHeight});
-            curGallery.find('.slick-prev').css({'top': curPhotoHeight / 2});
-            curGallery.find('.slick-next').css({'top': curPhotoHeight / 2});
+            }
         });
     });
 
@@ -175,61 +167,71 @@ $(document).ready(function() {
         });
     });
 
-    $('.slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        speed: 1000,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        pauseOnDotsHover: false
-    }).on('setPosition', function(event, slick) {
-        var curIndex = $('.slider').slick('slickCurrentSlide');
-        $('.slider .slick-dots li button.active').removeClass('active');
-        $('.slider .slick-dots li button').eq(curIndex).addClass('active');
-        if ($('.slider .slick-current .slider-item').hasClass('inverse')) {
-            $('header').addClass('inverse');
-        } else {
-            $('header').removeClass('inverse');
-        }
-    }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var curSlide = $('.slick-slide:not(.slick-cloned)').eq(nextSlide);
-        if (curSlide.find('.slider-item').hasClass('inverse')) {
-            $('header').addClass('inverse');
-        } else {
-            $('header').removeClass('inverse');
-        }
+    $('.slider').each(function() {
+        var curSlider = $(this);
+        curSlider.wrapInner('<div class="swiper-wrapper"></div>');
+        curSlider.find('.slider-item').addClass('swiper-slide');
+        curSlider.append('<div class="swiper-pagination"></div>');
+        const swiper = new Swiper(curSlider[0], {
+            loop: true,
+            speed: 1000,
+            touchAngle: 30,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            on: {
+                afterInit: function () {
+                    curSlider.find('.swiper-pagination-bullet-active').addClass('active');
+                    if ($('.swiper-slide-active').hasClass('inverse')) {
+                        $('header').addClass('inverse');
+                    } else {
+                        $('header').removeClass('inverse');
+                    }
+                },
+                slideChangeTransitionStart: function () {
+                    curSlider.find('.swiper-pagination-bullet.active').removeClass('active');
+                    if ($('.swiper-slide-active').hasClass('inverse')) {
+                        $('header').addClass('inverse');
+                    } else {
+                        $('header').removeClass('inverse');
+                    }
+                },
+                slideChangeTransitionEnd: function () {
+                    curSlider.find('.swiper-pagination-bullet-active').addClass('active');
+                }
+            }
+        });
     });
 
     $('.main-catalogue .catalogue-list').each(function() {
-        var curList = $(this);
-        var curParent = $(this).parents().filter('.main-catalogue');
+        var curSlider = $(this);
+        curSlider.wrapInner('<div class="swiper-wrapper"></div>');
+        curSlider.find('.catalogue-item').addClass('swiper-slide');
+        curSlider.append('<div class="swiper-pagination"></div><div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-prev"></use></svg></div><div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-next"></use></svg></div>');
+        var curParent = curSlider.parents().filter('.main-catalogue');
         var countSlides = 4;
         if (curParent.hasClass('other-catalogue')) {
             countSlides = 6;
         }
-        curList.slick({
-            infinite: false,
-            slidesToShow: countSlides,
-            slidesToScroll: countSlides,
-            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-prev"></use></svg></button>',
-            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-next"></use></svg></button>',
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 1231,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        arrows: false,
-                        dots: true
-                    }
-                }
-            ]
+        const swiper = new Swiper(curSlider[0], {
+            touchAngle: 30,
+            slidesPerView: 2,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            breakpoints: {
+                1232: {
+                  slidesPerView: countSlides
+                },
+            }
         });
     });
 
@@ -756,16 +758,21 @@ $(document).ready(function() {
         windowHTML +=           '<a href="#" class="window-photo-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-close"></use></svg></a>';
 
         windowHTML +=           '<div class="window-photo-slider">' +
-                                    '<div class="window-photo-slider-list">';
+                                    '<div class="window-photo-slider-list">' +
+                                        '<div class="swiper-wrapper">';
 
         var galleryLength = curGallery.find('a.card-media-item-inner').length;
         for (var i = 0; i < galleryLength; i++) {
             var curGalleryItem = curGallery.find('a.card-media-item-inner').eq(i);
-            windowHTML +=               '<div class="window-photo-slider-list-item">' +
-                                            '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/blank.gif" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
-                                        '</div>';
+            windowHTML +=                   '<div class="window-photo-slider-list-item swiper-slide">' +
+                                                '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/blank.gif" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
+                                            '</div>';
         }
-        windowHTML +=               '</div>' +
+        windowHTML +=                   '</div>' +
+                                        '<div class="swiper-pagination"></div>' +
+                                        '<div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></div>' +
+                                        '<div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></div>' +
+                                    '</div>' +
                                 '</div>';
 
         windowHTML +=       '</div>';
@@ -773,40 +780,56 @@ $(document).ready(function() {
         $('.window-photo').remove();
         $('body').append(windowHTML);
 
-        $('.window-photo-slider-list').slick({
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
-            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-            dots: true,
-            initialSlide: curIndex,
-            responsive: [
-                {
-                    breakpoint: 1231,
-                    settings: {
-                        arrows: false
+        const swiper = new Swiper($('.window-photo-slider-list')[0], {
+            touchAngle: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            on: {
+                afterInit: function () {
+                    var currentSlide = $('.window-photo-slider-list .swiper-slide-active');
+
+                    var curIMG = currentSlide.find('img');
+                    if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                        var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                        $('body').append(newIMG);
+                        newIMG.one('load', function(e) {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            newIMG.remove();
+                        });
+                        newIMG.attr('src', curIMG.attr('data-src'));
+                        window.setTimeout(function() {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            if (newIMG) {
+                                newIMG.remove();
+                            }
+                        }, 3000);
+                    }
+                },
+                slideChangeTransitionEnd: function () {
+                    var currentSlide = $('.window-photo-slider-list .swiper-slide-active');
+
+                    var curIMG = currentSlide.find('img');
+                    if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                        var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                        $('body').append(newIMG);
+                        newIMG.one('load', function(e) {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            newIMG.remove();
+                        });
+                        newIMG.attr('src', curIMG.attr('data-src'));
+                        window.setTimeout(function() {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            if (newIMG) {
+                                newIMG.remove();
+                            }
+                        }, 3000);
                     }
                 }
-            ]
-        }).on('setPosition', function(event, slick) {
-            var currentSlide = $('.window-photo-slider-list').slick('slickCurrentSlide');
-
-            var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
-            if (curIMG.attr('src') !== curIMG.attr('data-src')) {
-                var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
-                $('body').append(newIMG);
-                newIMG.one('load', function(e) {
-                    curIMG.attr('src', curIMG.attr('data-src'));
-                    newIMG.remove();
-                });
-                newIMG.attr('src', curIMG.attr('data-src'));
-                window.setTimeout(function() {
-                    curIMG.attr('src', curIMG.attr('data-src'));
-                    if (newIMG) {
-                        newIMG.remove();
-                    }
-                }, 3000);
             }
         });
 
@@ -830,116 +853,6 @@ $(document).ready(function() {
                 $('.window-photo-close').trigger('click');
             }
         }
-    });
-
-    $('body').on('click', '.collections-item a', function(e) {
-        if ($(window).width() < 1232) {
-            var curLink = $(this);
-
-            $('.wrapper').data('curScroll', $(window).scrollTop());
-            $('html').addClass('window-collections-open');
-
-            var windowHTML =    '<div class="window-collections">';
-
-            windowHTML +=           '<a href="#" class="window-collections-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-collections-close"></use></svg></a>';
-
-            windowHTML +=           '<div class="window-collections-loading"></div>';
-
-            windowHTML +=       '</div>';
-
-            $('.window-collections').remove();
-            $('body').append(windowHTML);
-
-            $.ajax({
-                type: 'POST',
-                url: curLink.attr('href'),
-                dataType: 'html',
-                cache: false
-            }).done(function(html) {
-                var newHTML = $(html);
-                windowHTML =    '<div class="window-collections-container">';
-                windowHTML +=       '<div class="window-collections-slider">';
-
-                if (newHTML.find('.collection-header').length == 1) {
-                    windowHTML +=       '<div class="window-collections-item window-collections-item-start">' +
-                                            '<div class="window-collections-item-inner">' +
-                                                '<div class="window-collections-item-preview" style="background-image:url(' + newHTML.find('.collection-header > img').attr('src') + ')"></div>' +
-                                            '</div>' +
-                                        '</div>';
-                }
-
-                newHTML.find('.collection-detail-item').each(function() {
-                    var curItem = $(this);
-                    windowHTML +=       '<div class="window-collections-item">' +
-                                            '<div class="window-collections-item-inner">' +
-                                                '<div class="window-collections-item-preview" style="background-image:url(' + curItem.find('.collection-detail-item-img > img').attr('src') + ')"></div>' +
-                                                '<div class="window-collections-item-content">' + curItem.find('.collection-detail-item-content').html() + '</div>' +
-                                            '</div>' +
-                                        '</div>';
-                });
-
-                windowHTML +=       '</div>';
-
-                windowHTML +=       '<div class="window-collections-info">';
-                if (newHTML.find('.collection-header-title').length == 1) {
-                    windowHTML +=       '<div class="window-collections-info-title">' + newHTML.find('.collection-header-title').html() + '</div>';
-                }
-                if (newHTML.find('.collection-detail-descr-inner').length == 1) {
-                    windowHTML +=       '<div class="window-collections-info-text">' + newHTML.find('.collection-detail-descr-inner').html() + '</div>';
-                }
-                windowHTML +=           '<a href="#" class="window-collections-info-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#header-cart"></use></svg></a>';
-                windowHTML +=       '</div>';
-                windowHTML +=   '</div>';
-
-                $('.window-collections-loading').remove();
-                $('.window-collections').append(windowHTML);
-
-                $('.window-collections-slider').slick({
-                    infinite: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    dots: true
-                }).on('setPosition', function(event, slick) {
-                    var currentSlide = $('.window-collections-slider').slick('slickCurrentSlide');
-                    var curSlide = $('.window-collections-item').eq(currentSlide);
-                    if (curSlide.find('.window-collections-item-content').length == 1) {
-                        $('.window-collections-info-link').addClass('visible');
-                    } else {
-                        $('.window-collections-info-link').removeClass('visible');
-                    }
-                });
-
-            });
-
-            e.preventDefault();
-        }
-    });
-
-    $('body').on('click', '.window-collections-info-link', function(e) {
-        var curSlider = $('.window-collections-slider');
-        curSlider.addClass('disabled');
-        var currentSlide = $('.window-collections-slider').slick('slickCurrentSlide');
-        var curSlide = $('.window-collections-item').eq(currentSlide);
-        var windowHTML =    '<div class="window-collections-detail">' +
-                                curSlide.find('.window-collections-item-content').html() +
-                            '</div>';
-        $('body').append(windowHTML);
-        e.preventDefault();
-    });
-
-    $('body').on('click', '.window-collections-close', function(e) {
-        $('.window-collections').remove();
-        $('.window-collections-detail').remove();
-        $('html').removeClass('window-collections-open');
-        $(window).scrollTop($('.wrapper').data('curScroll'));
-        e.preventDefault();
-    });
-
-    $('body').on('click', '.collection-detail-item-header-close', function(e) {
-        $('.window-collections-detail').remove();
-        $('.window-collections-slider').removeClass('disabled');
-        e.preventDefault();
     });
 
     $('.auth-sms-timer').each(function() {
@@ -1469,29 +1382,35 @@ $(window).on('load', function() {
     $('.slider-item-inner').css({'height': (windowHeight - 40) + 'px'});
 });
 
+var mediaSwiper = null;
+
 $(window).on('load resize', function() {
 
     $('.card-media-list').each(function() {
-        if ($('.card-media-list').hasClass('slick-slider')) {
-            $('.card-media-list').slick('unslick');
-        }
+        var curSlider = $(this);
         if ($(window).width() < 1232) {
-            $('.card-media-list').slick({
-                infinite: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: true,
-                adaptiveHeight: true
-            });
+            if (!curSlider.hasClass('swiper-initialized')) {
+                curSlider.wrapInner('<div class="swiper-wrapper"></div>');
+                curSlider.find('.card-media-item').addClass('swiper-slide');
+                curSlider.append('<div class="swiper-pagination"></div>');
+                mediaSwiper = new Swiper(curSlider[0], {
+                    touchAngle: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
+            }
+        } else {
+            if (curSlider.hasClass('swiper-initialized')) {
+                mediaSwiper.destroy();
+                curSlider.find('.card-media-item').removeClass('swiper-slide');
+                curSlider.find('.card-media-item').removeAttr('role');
+                curSlider.find('.card-media-item').removeAttr('aria-label');
+                curSlider.find('.card-media-item').removeAttr('style');
+                curSlider.html(curSlider.find('.swiper-wrapper').html());
+            }
         }
     });
-
-    window.setTimeout(function() {
-        $('.main-catalogue .slick-arrow').each(function() {
-            $(this).css({'top': $('.catalogue-item-preview').eq(0).outerHeight() / 2});
-        });
-    }, 500);
 
 });
 
