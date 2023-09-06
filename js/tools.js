@@ -1037,7 +1037,11 @@ function initForm(curForm) {
         var curID = 'form-input-date-id-' + indexFormInput;
         curInput.attr('id', curID);
         indexFormInput++;
-        new AirDatepicker('#' + curID);
+        new AirDatepicker('#' + curID, {
+            classes: 'form-input-datepicker',
+            prevHtml: '<svg viewBox="0 0 20 20"><path d="M12.5 5L7.5 10L12.5 15" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+            nextHtml: '<svg viewBox="0 0 20 20"><path d="M7.5 15L12.5 10L7.5 5" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+        });
     });
 
     curForm.find('.form-select select').each(function() {
