@@ -211,7 +211,7 @@ $(document).ready(function() {
         var curSlider = $(this);
         curSlider.wrapInner('<div class="swiper-wrapper"></div>');
         curSlider.find('.catalogue-item').addClass('swiper-slide');
-        curSlider.append('<div class="swiper-pagination"></div><div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-prev"></use></svg></div><div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-next"></use></svg></div>');
+        curSlider.append('<div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-prev"></use></svg></div><div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-next"></use></svg></div>');
         var curParent = curSlider.parents().filter('.main-catalogue');
         var countSlides = 4;
         if (curParent.hasClass('other-catalogue')) {
@@ -223,9 +223,6 @@ $(document).ready(function() {
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
             },
             breakpoints: {
                 1232: {
@@ -260,7 +257,7 @@ $(document).ready(function() {
         var curBlock = curTitle.parent();
         curBlock.toggleClass('open');
         curBlock.find('.card-info-block-container').slideToggle(function() {
-            $(window).trigger('resize');
+            $(window).trigger('scroll');
         });
         e.preventDefault();
     });
@@ -494,6 +491,14 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.catalogue-filter-mobile-link').length == 0 && $(e.target).parents().filter('.catalogue-ctrl').length == 0) {
+            $('html').removeClass('catalogue-filter-open');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
+    });
+
     $('.catalogue-ctrl-submit a').click(function(e) {
         $('.catalogue-ctrl-close').click();
         e.preventDefault();
@@ -672,6 +677,7 @@ $(document).ready(function() {
             $('.cabinet-orders-item.active').removeClass('active');
             curItem.addClass('active');
             $('.cabinet-orders-detail').addClass('loading');
+            curItem.addClass('loading');
             $.ajax({
                 type: 'POST',
                 url: curItem.attr('href'),
@@ -680,8 +686,15 @@ $(document).ready(function() {
             }).done(function(html) {
                 $('.cabinet-orders-detail').html(html);
                 $('.cabinet-orders-detail').removeClass('loading');
+                curItem.removeClass('loading');
+                $('.cabinet-orders').addClass('open');
             });
         }
+        e.preventDefault();
+    });
+
+    $('.cabinet-orders-back a').click(function(e) {
+        $('.cabinet-orders').removeClass('open');
         e.preventDefault();
     });
 
@@ -1369,6 +1382,20 @@ function initCataloguePreview() {
                 htmlDots +=     '</div>';
                 curPreview.append(htmlTabs + htmlDots);
                 curPreview.find('.catalogue-item-preview-dot').eq(0).addClass('active');
+
+                var htmlSlider =    '<div class="catalogue-item-preview-swiper swiper"><div class="swiper-wrapper">';
+                for (var i = 0; i < countSlides; i++) {
+                    htmlSlider +=       '<div class="swiper-slide">' + curPreview.find('.catalogue-item-preview-slides .catalogue-item-preview-slide').eq(i).html() + '</div>';
+                }
+                htmlSlider +=       '</div><div class="swiper-pagination"></div></div>';
+                curPreview.append(htmlSlider);
+                new Swiper(curPreview.find('.catalogue-item-preview-swiper')[0], {
+                    loop: true,
+                    touchAngle: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
             }
         }
     });
@@ -1409,6 +1436,20 @@ $(window).on('load resize', function() {
                 curSlider.find('.card-media-item').removeAttr('style');
                 curSlider.html(curSlider.find('.swiper-wrapper').html());
             }
+        }
+    });
+    
+    $('.cabinet-orders-item').each(function() {
+        var curItem = $(this);
+        var maxItems = 5;
+        if ($(window).width() < 1232) {
+            maxItems = 4;
+        }
+        var curDiff = curItem.find('.cabinet-orders-item-goods-item').length - maxItems;
+        curItem.find('.cabinet-orders-item-more').removeClass('visible');
+        if (curDiff > 0) {
+            curItem.find('.cabinet-orders-item-more').html('+' + curDiff);
+            curItem.find('.cabinet-orders-item-more').addClass('visible');
         }
     });
 
