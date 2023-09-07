@@ -1127,7 +1127,9 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 .catalogue-item-preview-dot.active {background:#6B645C}
 .catalogue-item-preview-swiper.swiper {position:absolute; left:-9999px; top:-9999px; width:100%; height:100%; display:flex}
 .catalogue-item-title {margin:10px 0 0 0; font-weight:500; font-size:13px; line-height:20px; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
-.catalogue-item-price {font-weight:500; font-size:13px; line-height:20px; color:#6B645C}
+.catalogue-item-price {font-weight:500; font-size:13px; line-height:20px; color:#6B645C; display:flex; align-items:center}
+.catalogue-item-color {min-width:6px; max-width:6px; height:6px; border-radius:50%; margin:0 0 0 8px}
+.catalogue-item-color+.catalogue-item-color {margin:0 0 0 4px}
 .catalogue-item-nameplates {position:absolute; left:6px; top:6px; right:10px; display:flex; flex-wrap:wrap; font-weight:500; font-size:11px; line-height:17px; text-transform:uppercase; color:#18171F}
 .catalogue-item-nameplates span {display:block; margin:4px 0 0 4px; white-space:nowrap; padding:0 4px; height:16px; border-radius:4px; background:#FFFFFF}
 .catalogue-item-favourite {position:absolute; right:10px; top:10px}
