@@ -795,6 +795,7 @@ $(document).ready(function() {
 
         const swiper = new Swiper($('.window-photo-slider-list')[0], {
             touchAngle: 30,
+            initialSlide: curIndex,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
