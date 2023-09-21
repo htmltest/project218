@@ -114,6 +114,7 @@ $(document).ready(function() {
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true
             },
             on: {
                 afterInit: function () {
@@ -182,6 +183,7 @@ $(document).ready(function() {
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true
             },
             on: {
                 afterInit: function () {
@@ -802,6 +804,7 @@ $(document).ready(function() {
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true
             },
             on: {
                 afterInit: function () {
@@ -1399,6 +1402,7 @@ function initCataloguePreview() {
                     touchAngle: 30,
                     pagination: {
                         el: '.swiper-pagination',
+                        clickable: true
                     },
                 });
             }
@@ -1429,6 +1433,7 @@ $(window).on('load resize', function() {
                     touchAngle: 30,
                     pagination: {
                         el: '.swiper-pagination',
+                        clickable: true
                     },
                 });
             }
