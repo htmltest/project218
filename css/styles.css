@@ -1437,7 +1437,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .window-cart-remove-btns a {min-width:120px; margin:0 6px}
 
 .cart-side {min-width:339px; max-width:339px; margin:36px 0 0 0}
-.cart-side-inner {background:#FFFFFF; border:1px solid #E3E2DE; padding:16px}
+.cart-side-inner {background:#FFFFFF; border:1px solid #E3E2DE; padding:15px}
 .cart-side-row {display:flex; margin:24px 0 0 0; align-items:center; font-size:14px; line-height:21px}
 .cart-side-row:first-child {margin:0}
 .cart-side-row-discount {display:none}
@@ -1449,6 +1449,10 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .cart-side-btn .btn {min-width:100%; padding:8px 0}
 .cart-side-notice {margin:24px 0 0 0; font-size:14px; line-height:21px; color:#6B645C}
 .cart-side-notice span {color:#18171F}
+.cart-side-policy {margin:24px 0 0 0; font-size:12px; line-height:14px; color:#6B645C}
+.cart-side .form-checkbox {margin:16px -2px 0 0; font-size:12px; line-height:14px; color:#6B645C}
+.cart-side .form-checkbox span {padding:0 0 0 30px}
+.cart-side .form-checkbox span::before {top:50%; margin-top:-10px}
 
 @media (max-width:1439px) {
     .cart-side {min-width:300px; max-width:300px}
@@ -1461,6 +1465,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .cart-side-row:first-child {margin:0}
     .cart-side-row-summ {margin:8px 0 0 0; font-size:16px; line-height:19px}
     .cart-side-btn {margin:8px 0 0 0}
+    .cart-side-policy {margin:16px 0 0 0}
 }
 
 .cart-empty {margin:32px 0 0 0; padding:60px 0; border-top:1px solid #E3E2DE; border-bottom:1px solid #E3E2DE; text-align:center}
