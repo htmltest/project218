@@ -536,6 +536,14 @@ $(document).ready(function() {
         });
     });
 
+    $('.card-info-sizes input').change(function() {
+        $('.card-info-submit strong').html($('.card-info-sizes input:checked').parent().find('span').text());
+    });
+
+    $('.card-info-sizes input:checked').each(function() {
+        $('.card-info-submit strong').html($('.card-info-sizes input:checked').parent().find('span').text());
+    });
+
     $('body').on('click', '.window-size-btn a', function(e) {
         if ($('.window .card-info-sizes input:checked').length == 1) {
             var curIndex = $('.window .card-info-sizes input').index($('.window .card-info-sizes input:checked'));
@@ -1449,7 +1457,7 @@ $(window).on('load resize', function() {
             }
         }
     });
-    
+
     $('.cabinet-orders-item').each(function() {
         var curItem = $(this);
         var maxItems = 5;
@@ -1574,6 +1582,6 @@ function recalcCart() {
             curDiscount = Number($('#cart-side-discount').html().replace(/\ /g, ''));
         }
         var curSumm = deliveryCost + curCost + curDiscount;
-        $('#cart-side-summ').html(String(curSumm).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+        $('#cart-side-summ, #cart-side-summ-fix').html(String(curSumm).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
     }
 }

@@ -47,7 +47,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
     ul li::before {top:8px}
 }
 
-.btn {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#18171F; color:#FFFFFF; border:1px solid #18171F; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box}
+.btn {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#18171F; color:#FFFFFF; border:1px solid #18171F; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .btn {font-family:Raleway, sans-serif}
 @media (min-width:1232px) {
     .btn:hover {text-decoration:none; background-color:#FFFFFF; color:#18171F}
@@ -57,7 +57,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
     .btn {font-size:11px; line-height:17px; padding:9px 12px}
 }
 
-.btn-border {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#18171F; border:1px solid #18171F; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box}
+.btn-border {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#18171F; border:1px solid #18171F; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box; font-feature-settings:"pnum" on, "lnum" on}
 .btn-border.inverse {border-color:#FFFFFF; color:#FFFFFF}
 .btn-border.grey {border-color:#6B645C; color:#6B645C}
 .fonts-loaded .btn-border {font-family:Raleway, sans-serif}
@@ -71,7 +71,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
     .btn-border {font-size:11px; line-height:17px; padding:9px 12px}
 }
 
-.btn-grey {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#EBEBEA; color:#18171F; border:1px solid #EBEBEA; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box}
+.btn-grey {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#EBEBEA; color:#18171F; border:1px solid #EBEBEA; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .btn-grey {font-family:Raleway, sans-serif}
 @media (min-width:1232px) {
     .btn-grey:hover {text-decoration:none; background-color:#18171F; border-color:#18171F; color:#FFFFFF}
@@ -81,7 +81,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
     .btn-grey {font-size:11px; line-height:17px; padding:9px 12px}
 }
 
-.btn-dark {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#6B645C; color:#FFFFFF; border:1px solid #6B645C; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box}
+.btn-dark {display:inline-block; margin:0; padding:14px 31px; overflow:visible; outline:none; text-decoration:none; background:#6B645C; color:#FFFFFF; border:1px solid #6B645C; border-radius:0; font:600 12px/18px Arial, Helvetica, sans-serif; letter-spacing:0.02em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:background-color 0.2s, color 0.2s, border-color 0.2s; box-sizing:border-box; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .btn-dark {font-family:Raleway, sans-serif}
 @media (min-width:1232px) {
     .btn-dark:hover {text-decoration:none; background-color:#FFFFFF; color:#18171F}
@@ -106,7 +106,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 .form-input.focus > span,
 .form-input.full > span {font-weight:normal; font-size:12px; line-height:20px; top:5px; transform:none}
 .form-input input,
-.form-input textarea {position:relative; border:1px solid #F5F5F5; font:500 14px/24px Arial, sans-serif; letter-spacing:0; color:#18171F; vertical-align:top; margin:0; padding:18px 15px 4px 15px; width:100%; height:48px; box-sizing:border-box; outline:none; border-radius:0; background:#F5F5F5; -webkit-appearance:none; transition:border-color 0.2s}
+.form-input textarea {position:relative; border:1px solid #F5F5F5; font:500 14px/24px Arial, sans-serif; letter-spacing:0; color:#18171F; vertical-align:top; margin:0; padding:18px 15px 4px 15px; width:100%; height:48px; box-sizing:border-box; outline:none; border-radius:0; background:#F5F5F5; -webkit-appearance:none; transition:border-color 0.2s; font-feature-settings:"pnum" on, "lnum" on}
 .form-input input.codeSMS {padding-top:11px; padding-bottom:11px}
 .fonts-loaded .form-input input,
 .fonts-loaded .form-input textarea {font-family:Raleway, sans-serif}
@@ -529,7 +529,7 @@ header.inverse.fixed .header-cart-link span {background:#18171F; color:#FFFFFF}
 .header-cart-item-bottom {margin:16px 0 0 0; display:flex; align-items:center}
 .header-cart-item-count {min-width:61px; max-width:61px}
 .header-cart-item-count-container {width:61px; height:24px; border:1px solid #E3E2DE; position:relative; padding:0 20px}
-.header-cart-item-count-container input {position:relative; border:none; font:500 14px/22px Arial, sans-serif; letter-spacing:-0.01em; color:#18171F; vertical-align:top; text-align:center; margin:0; padding:0; width:100%; height:22px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none}
+.header-cart-item-count-container input {position:relative; border:none; font:500 14px/22px Arial, sans-serif; letter-spacing:-0.01em; color:#18171F; vertical-align:top; text-align:center; margin:0; padding:0; width:100%; height:22px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .header-cart-item-count-container input {font-family:Raleway, sans-serif}
 .header-cart-item-count-container input::-webkit-input-placeholder {opacity:1; color:#B6AB9F}
 .header-cart-item-count-container input::-moz-placeholder {opacity:1; color:#B6AB9F}
@@ -1269,6 +1269,9 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .card-info-ctrl.in-cart .card-info-submit {display:none}
 .card-info-submit .btn {width:100%}
 .card-info-submit .btn-grey {width:100%}
+.card-info-submit span {display:none}
+.card-info-submit em {display:none; font-style:normal}
+.card-info-submit strong {font-weight:inherit}
 .card-info-link {display:none; width:100%}
 .card-info-ctrl.in-cart .card-info-link {display:block}
 .card-info-link .btn-grey {width:100%}
@@ -1315,6 +1318,10 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .card-info-inner {width:auto; padding:0}
     .card-info-price {display:block}
     .card-info-price span {display:block; margin:8px 0 0 0; padding:0; height:auto; line-height:17px; color:#6B645C; background:none; border-radius:0}
+    .card-info-blocks {margin:30px 0 0 0}
+    .card-info-ctrl {position:fixed; left:0; bottom:0; right:0; z-index:20; background:#FFFFFF; border-top:1px solid #E3E2DE; margin:0; box-shadow:-6px 4px 16px 0px rgba(0, 0, 0, 0.12); padding:10px 12px}
+    .card-info-submit span {display:inline; color:#AAAAAA}
+    .card-info-submit em {display:inline; color:#AAAAAA}
 }
 
 .cart {margin:40px 0 0 0}
@@ -1366,7 +1373,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .cart-item-select-list-item strong {font-weight:normal}
 .cart-item-count {min-width:115px; max-width:115px}
 .cart-item-count-container {width:77px; height:32px; border:1px solid #E3E2DE; position:relative; padding:0 20px}
-.cart-item-count-container input {position:relative; border:none; font:500 14px/30px Arial, sans-serif; letter-spacing:-0.01em; color:#18171F; vertical-align:top; text-align:center; margin:0; padding:0; width:100%; height:30px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none}
+.cart-item-count-container input {position:relative; border:none; font:500 14px/30px Arial, sans-serif; letter-spacing:-0.01em; color:#18171F; vertical-align:top; text-align:center; margin:0; padding:0; width:100%; height:30px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .cart-item-count-container input {font-family:Raleway, sans-serif}
 .cart-item-count-container input::-webkit-input-placeholder {opacity:1; color:#B6AB9F}
 .cart-item-count-container input::-moz-placeholder {opacity:1; color:#B6AB9F}
@@ -1453,6 +1460,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .cart-side .form-checkbox {margin:16px -2px 0 0; font-size:12px; line-height:14px; color:#6B645C}
 .cart-side .form-checkbox span {padding:0 0 0 30px}
 .cart-side .form-checkbox span::before {top:50%; margin-top:-10px}
+.cart-side-btn span {display:none}
 
 @media (max-width:1439px) {
     .cart-side {min-width:300px; max-width:300px}
@@ -1460,12 +1468,14 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 
 @media (max-width:1231px) {
     .cart-side {min-width:0; max-width:none; margin:40px 0 0 0}
-    .cart-side-inner {padding:12px}
+    .cart-side-inner {padding:12px; margin-top:0 !important}
     .cart-side-row {margin:2px 0 0 0; font-size:12px; line-height:18px}
     .cart-side-row:first-child {margin:0}
     .cart-side-row-summ {margin:8px 0 0 0; font-size:16px; line-height:19px}
-    .cart-side-btn {margin:8px 0 0 0}
+    .cart-side-btn {position:fixed; left:0; bottom:0; right:0; z-index:20; padding:10px 12px; border-top:1px solid #E3E2DE; background:#FFFFFF; box-shadow:-6px 4px 16px 0px rgba(0, 0, 0, 0.12); margin:0}
     .cart-side-policy {margin:16px 0 0 0}
+    .cart-side-btn span {display:inline; color:#AAAAAA}
+    .cart-side-btn span em {font-style:normal}
 }
 
 .cart-empty {margin:32px 0 0 0; padding:60px 0; border-top:1px solid #E3E2DE; border-bottom:1px solid #E3E2DE; text-align:center}
@@ -1509,9 +1519,9 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .order-container {display:block; margin:24px 0 0 0}
     .order-onestep .order-container {display:flex; flex-wrap:wrap}
     .order-fields {width:auto; margin:0}
-    .order-onestep .order-fields {margin:30px 0 0 0; order:1; width:100%}
+    .order-onestep .order-fields {margin:30px 0 0 0; width:100%}
     .order .cart-side {margin:40px 0 0 0}
-    .order-onestep .cart-side {margin:0; order:0; min-width:0; max-width:none; width:100%}
+    .order-onestep .cart-side {margin:30px 0 0 0; min-width:0; max-width:none; width:100%}
     .order-onestep .cart-side.fixed .cart-side-inner {margin-top:none !important}
     .order-fields-row {margin:16px -6px}
     .order-fields-row-item {padding:0 6px}
@@ -2087,7 +2097,7 @@ footer a {color:#FFFFFF; text-decoration:none}
 .footer-subscribe form {margin:24px 0 0 0; padding:0}
 .footer-subscribe-form-content {display:flex}
 .footer-subscribe-input {width:100%; margin:0 5px 0 0}
-.footer-subscribe-input input {position:relative; border:none; font:500 13px/20px Arial, sans-serif; letter-spacing:0.04em; color:#18171F; vertical-align:top; margin:0; padding:10px 14px; width:100%; height:40px; box-sizing:border-box; outline:none; border-radius:0; background:#FFFFFF; -webkit-appearance:none}
+.footer-subscribe-input input {position:relative; border:none; font:500 13px/20px Arial, sans-serif; letter-spacing:0.04em; color:#18171F; vertical-align:top; margin:0; padding:10px 14px; width:100%; height:40px; box-sizing:border-box; outline:none; border-radius:0; background:#FFFFFF; -webkit-appearance:none; font-feature-settings:"pnum" on, "lnum" on}
 .fonts-loaded .footer-subscribe-input input {font-family:Raleway, sans-serif}
 .footer-subscribe-input input::-webkit-input-placeholder {opacity:1; color:#18171F}
 .footer-subscribe-input input::-moz-placeholder {opacity:1; color:#18171F}
