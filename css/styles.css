@@ -1006,7 +1006,10 @@ header.inverse.fixed .header-user-link svg {stroke:#18171F}
 }
 .catalogue-filter-list-item svg {position:absolute; right:8px; top:50%; width:16px; height:16px; fill:none; stroke:#6B645C; margin-top:-8px; opacity:0; transition:opacity 0.2s}
 .catalogue-filter-list-item input:checked+span svg {opacity:1}
-.catalogue-filter-list-item svg.catalogue-filter-list-item-color {position:relative; right:auto; top:auto; display:inline-block; vertical-align:middle; margin:-2px 12px 0 0; width:20px; height:13px; opacity:1; stroke:none}
+.catalogue-filter-list-item span strong {display:inline-block; vertical-align:middle; margin:-2px 12px 0 0; width:20px; height:13px; position:relative; overflow:hidden}
+.catalogue-filter-list-item span strong.inverse {border-bottom:1px solid #E3E2DE}
+.catalogue-filter-list-item span strong em {display:block; width:20px; height:20px; border-radius:50%; background:no-repeat center top; background-size:100% auto}
+.catalogue-filter-list-item span strong.inverse em {border:1px solid #E3E2DE}
 .catalogue-filter-slider {padding:12px; width:292px}
 .catalogue-filter-slider .form-slider {position:relative}
 .catalogue-filter-slider .form-slider-hints {display:flex}
@@ -1253,9 +1256,13 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .card-info-colors label {display:block; min-width:25px; max-width:25px; cursor:pointer; margin:16px 0 0 12px}
 .card-info-colors label input {display:none}
 .card-info-colors label span {display:block; width:25px; height:15px; position:relative}
-.card-info-colors label span svg {display:block; width:25px; height:15px}
-.card-info-colors label span svg+svg {width:19px; height:5px; position:absolute; left:3px; top:-7px; opacity:0; transition:opacity 0.2s}
-.card-info-colors label input:checked+span svg+svg {opacity:1}
+.card-info-colors label span strong {display:block; width:25px; height:15px; position:relative; overflow:hidden}
+.card-info-colors label span strong.inverse {border-bottom:1px solid #E3E2DE}
+.card-info-colors label span strong em {display:block; width:25px; height:25px; border-radius:50%; background:no-repeat center top; background-size:100% auto}
+.card-info-colors label span strong.inverse em {border:1px solid #E3E2DE}
+.card-info-colors label span svg {width:19px; height:5px; position:absolute; left:3px; top:-7px; opacity:0; transition:opacity 0.2s}
+.card-info-colors label span strong.inverse+svg {stroke:#E3E2DE}
+.card-info-colors label input:checked+span svg {opacity:1}
 .card-info-color-title {margin:16px 0 0 0; font-size:14px; line-height:21px; color:#242323}
 .card-info-sizes {margin:16px 0 0 -12px; display:flex; flex-wrap:wrap}
 .card-info-sizes label {display:block; min-width:56px; max-width:56px; cursor:pointer; margin:16px 0 0 12px}
@@ -1320,6 +1327,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .card-info-price span {display:block; margin:8px 0 0 0; padding:0; height:auto; line-height:17px; color:#6B645C; background:none; border-radius:0}
     .card-info-blocks {margin:30px 0 0 0}
     .card-info-ctrl {position:fixed; left:0; bottom:0; right:0; z-index:20; background:#FFFFFF; border-top:1px solid #E3E2DE; margin:0; box-shadow:-6px 4px 16px 0px rgba(0, 0, 0, 0.12); padding:10px 12px}
+    .iphone .card-info-ctrl {transform:translateY(-20px)}
     .card-info-submit span {display:inline; color:#AAAAAA}
     .card-info-submit em {display:inline; color:#AAAAAA}
 }
@@ -1473,6 +1481,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
     .cart-side-row:first-child {margin:0}
     .cart-side-row-summ {margin:8px 0 0 0; font-size:16px; line-height:19px}
     .cart-side-btn {position:fixed; left:0; bottom:0; right:0; z-index:20; padding:10px 12px; border-top:1px solid #E3E2DE; background:#FFFFFF; box-shadow:-6px 4px 16px 0px rgba(0, 0, 0, 0.12); margin:0}
+    .iphone .cart-side-btn {transform:translateY(-20px)}
     .cart-side-policy {margin:16px 0 0 0}
     .cart-side-btn span {display:inline; color:#AAAAAA}
     .cart-side-btn span em {font-style:normal}

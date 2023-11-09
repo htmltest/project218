@@ -1585,3 +1585,9 @@ function recalcCart() {
         $('#cart-side-summ, #cart-side-summ-fix').html(String(curSumm).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
     }
 }
+
+$(document).ready(function() {
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        $('html').addClass('iphone');
+    }
+});
