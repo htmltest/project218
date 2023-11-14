@@ -1263,6 +1263,9 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 .card-info-colors label span svg {width:19px; height:5px; position:absolute; left:3px; top:-7px; opacity:0; transition:opacity 0.2s}
 .card-info-colors label span strong.inverse+svg {stroke:#E3E2DE}
 .card-info-colors label input:checked+span svg {opacity:1}
+@media (min-width:1232px) {
+    .card-info-colors label:hover span svg {opacity:1}
+}
 .card-info-color-title {margin:16px 0 0 0; font-size:14px; line-height:21px; color:#242323}
 .card-info-sizes {margin:16px 0 0 -12px; display:flex; flex-wrap:wrap}
 .card-info-sizes label {display:block; min-width:56px; max-width:56px; cursor:pointer; margin:16px 0 0 12px}
