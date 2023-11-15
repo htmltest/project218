@@ -244,6 +244,16 @@ $(document).ready(function() {
         $('.card-info-color-title').html(curChecked.attr('data-title'));
     });
 
+    $('body').on('mouseenter', '.card-info-colors label', function() {
+        var curChecked = $(this).find('input');
+        $('.card-info-color-title').html(curChecked.attr('data-title'));
+    });
+
+    $('body').on('mouseleave', '.card-info-colors label', function() {
+        var curChecked = $('.card-info-colors input:checked');
+        $('.card-info-color-title').html(curChecked.attr('data-title'));
+    });
+
     $('.card-info-colors').each(function() {
         var curChecked = $('.card-info-colors input:checked');
         $('.card-info-color-title').html(curChecked.attr('data-title'));
