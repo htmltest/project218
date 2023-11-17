@@ -1266,7 +1266,7 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 @media (min-width:1232px) {
     .card-info-colors label:hover span svg {opacity:1}
 }
-.color-print-popup {display:none; position:absolute; left:50%; bottom:27px; width:96px; margin-left:-48px; padding:7px; background:#FFFFFF; border:1px solid #EBEBEA; box-shadow:2px 2px 16px 0px rgba(0, 0, 0, 0.06)}
+.color-print-popup {display:none; position:absolute; left:50%; bottom:27px; width:96px; margin-left:-48px; padding:7px; background:#FFFFFF; border:1px solid #EBEBEA; box-shadow:2px 2px 16px 0px rgba(0, 0, 0, 0.06); z-index:99}
 @media (min-width:1232px) {
     .card-info-colors label:hover .color-print-popup {display:block}
 }
