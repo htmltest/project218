@@ -560,6 +560,32 @@ header.inverse.fixed .header-cart-link span {background:#18171F; color:#FFFFFF}
 .header-cart-window-btn {margin:12px 0 0 0}
 .header-cart-window-btn .btn {width:100%}
 
+@media (max-width:1231px) {
+    .header-cart-window-container {width:auto; left:0}
+    .header-cart-window-header {height:41px; border-bottom:1px solid #EBEBEA; padding:0 12px; display:flex; align-items:center; font-size:16px; line-height:18px; letter-spacing:0}
+    .header-cart-window-close {right:12px; top:12px; width:16px; height:16px}
+    .header-cart-window-close svg {width:16px; height:16px; stroke:#A6A29D}
+    .header-cart-window-content {max-height:calc(100vh - 128px)}
+    .header-cart-window-list {margin:0 9px 0 12px; border-top:none}
+    .header-cart-item {padding:12px 0; position:relative}
+    .header-cart-item-preview {min-width:77px; max-width:77px}
+    .header-cart-item-container {max-width:none; margin:0 0 0 16px}
+    .header-cart-item-title {white-space:normal; font-size:11px; line-height:14px; max-height:28px; position:relative; overflow:hidden}
+    .header-cart-item-bottom {margin:12px 0 0 0}
+    .header-cart-item-count {min-width:63px; max-width:63px}
+    .header-cart-item-count-container {width:63px; height:22px}
+    .header-cart-item-count-container input {font-size:11px; line-height:20px; height:20px}
+    .header-cart-item-count-dec,
+    .header-cart-item-count-inc {top:4px}
+    .header-cart-item-price {font-size:11px; line-height:14px}
+    .header-cart-item-remove {position:absolute; right:0; bottom:12px; min-width:28px; max-width:28px; height:28px}
+    .header-cart-item-remove a {width:28px; height:28px}
+    .header-cart-item-remove a svg {width:28px; height:28px}
+    .header-cart-window-bottom {height:87px; padding:10px 12px 0 12px}
+    .header-cart-window-summ {font-size:14px; line-height:19px}
+    .header-cart-window-btn {margin:10px 0 0 0}
+}
+
 .header-favourite {min-width:16px; margin:0 0 0 20px}
 .header-favourite-link {display:block; position:relative; text-decoration:none}
 .header-favourite-link svg {display:block; width:16px; height:16px; fill:none; stroke:#18171F; transition:stroke 0.2s}
@@ -1505,6 +1531,8 @@ a.card-media-item-inner {cursor:url(../images/zoom-in.svg) 20 20, pointer};
 
 @media (max-width:1231px) {
     .main-catalogue-cart {margin:80px 0 0 0}
+    
+    .header-cart-window .cart-empty {margin:12px; padding:0; border-top:none; border-bottom:none}
 }
 
 .order {max-width:925px; margin:40px auto 80px auto}
